@@ -21,7 +21,9 @@ function updateTime() {
     }
 
     // Inject time into HTML element
-    settingTimeElement.textContent = `${timeOfDay} ${hours}:${minutes}:${seconds}`;
+    if (settingTimeElement) {
+        settingTimeElement.textContent = `${timeOfDay} ${hours}:${minutes}:${seconds}`;
+    }
 }
 
 // Update time on initial load

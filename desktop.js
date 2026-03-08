@@ -3904,7 +3904,9 @@ function setIcon() {
 }
 
 // Startup
-document.getElementsByTagName('body')[0].onload = function nupd() {
+function nupd() {
+    if (nupd.ran) return;
+    nupd.ran = true;
     setTimeout(() => {
         $('#loadback').addClass('hide');
     }, 500);
@@ -3955,7 +3957,15 @@ document.getElementsByTagName('body')[0].onload = function nupd() {
         }
     });
     // loadlang();
-};
+}
+// Use DOMContentLoaded instead of body.onload to avoid waiting for slow external CDN scripts
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', nupd);
+} else {
+    nupd();
+}
+// Fallback: ensure loading screen is dismissed even if DOMContentLoaded was missed
+setTimeout(nupd, 5000);
 
 let autoUpdate = true;
 function checkUpdate() {
@@ -4043,16 +4053,16 @@ function calcTimeString(second) {
     const minutes = Math.floor(second % 3600 / 60);
     const seconds = second % 60;
     if (days > 0) {
-        timeStr += " " + days +  day";
+        timeStr += " " + days + " day";
     }
     if (hours > 0) {
-        timeStr += " " + hours +  hour";
+        timeStr += " " + hours + " hour";
     }
     if (minutes > 0) {
-        timeStr += " " + minutes +  min";
+        timeStr += " " + minutes + " min";
     }
     if (seconds > 0) {
-        timeStr += " " + seconds +  sec";
+        timeStr += " " + seconds + " sec";
     }
-    return timeStr === "" ?  0 sec" : timeStr;
+    return timeStr === "" ? "0 sec" : timeStr;
 }
