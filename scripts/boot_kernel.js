@@ -9,8 +9,8 @@ var timer;
 timer = setInterval(function () {
     setProgress(progress[i]);
     i++;
-    document.getElementById('body').style.height = window.innerHeight + "px";                 //适应高度
-    document.getElementById('center-div').style.height = (window.innerHeight - document.getElementById('info').clientHeight - 10) + "px";   //适应高度
+    document.getElementById('body').style.height = window.innerHeight + "px";                 // Adjust height
+    document.getElementById('center-div').style.height = (window.innerHeight - document.getElementById('info').clientHeight - 10) + "px";   // Adjust height
     if (i >= progress.length) {
         if (timer != undefined) {
             clearInterval(timer);
@@ -37,7 +37,7 @@ window.onkeydown = function (event) {
     }
 }
 window.ontouchstart = toBIOS;
-document.getElementById('center-div').style.height = (window.innerHeight - document.getElementById('info').clientHeight - 10) + "px";   //适应高度
+document.getElementById('center-div').style.height = (window.innerHeight - document.getElementById('info').clientHeight - 10) + "px";   // Adjust height
 document.oncontextmenu = function () {
     return false;
 }

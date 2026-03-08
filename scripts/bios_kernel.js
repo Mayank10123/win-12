@@ -7,14 +7,14 @@ function timeChange() {
     document.getElementById('time').innerHTML = "[" + addZero(d.getHours()) + ":" + addZero(d.getMinutes()) + ":" + addZero(d.getSeconds()) + "]";
     document.getElementById('date').innerHTML = "[" + d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear() + "]";
 
-    //顺便适应高度
+    // Also adjust height
     // document.getElementById('body').style.height = window.innerHeight + "px";
     // document.getElementById('mainPage').style.height = (window.innerHeight - 150) + 'px';
     // document.getElementById('exitPage').style.height = (window.innerHeight - 150) + 'px';
 }
 function toBoot() {
     document.getElementById('background').style.display = '';
-    setTimeout('document.getElementById(`body`).innerHTML=``;document.getElementById(`body`).style.cssText=`background-color: black;`;', 500); setTimeout('window.location.href=`./boot.html`', 1000); //Boot延迟
+    setTimeout('document.getElementById(`body`).innerHTML=``;document.getElementById(`body`).style.cssText=`background-color: black;`;', 500); setTimeout('window.location.href=`./boot.html`', 1000); // Boot delay
 }
 function BIOS_confirm(tit, okcode, width) {
     document.getElementById('confirm-tit').innerHTML = tit;
@@ -67,7 +67,7 @@ window.onkeydown = function (event) {
             tab = tab % 2;
             ChangePage();
         }
-        if (event.keyCode == 121/*F10=退出*/) {
+        if (event.keyCode == 121/* F10=Exit */) {
             event.preventDefault();
             eval(document.getElementById('e1').getAttribute('click'));
         }

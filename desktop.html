@@ -23,12 +23,12 @@
 	<link rel="stylesheet" href="apps/style/defender.css">
 	<link rel="stylesheet" href="apps/style/taskmgr.css">
 	<link rel="stylesheet" href="widgets.css">
-	<!-- 掌声欢迎 Copilot 的 css 引入(bs -->
+	<!-- Copilot CSS import -->
 	<link rel="stylesheet" href="apps/style/copilot.css">
 	<link rel="manifest" href="pwa/manifest.json">
 	<link rel="shortcut icon" href="./pwa/logo.png" type="image/x-icon">
 	<link rel="stylesheet" href="apps/style/login.css">
-	<!-- 各个模块 -->
+	<!-- Modules -->
 	<link rel="stylesheet" href="module/tab.css">
 	<base target="_blank">
 
@@ -130,7 +130,7 @@
 	<!-- <img src="https://bing.com/th?id=OHR.Trossachs_ZH-CN9299955040_UHD.jpg&qlt=100" alt=""> -->
 	<script src="./jq.min.js"></script>
 	<div id="start-menu">
-		<!-- 开始菜单 -->
+		<!-- Start Menu -->
 		<div id="s-m-l">
 			<div id="s-m-user">
 				<svg viewBox="0,0,257,344" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" overflow="hidden"><defs><clipPath id="user-clip0"><rect x="382" y="195" width="257" height="344" /></clipPath><linearGradient x1="351.462" y1="233.56" x2="669.496" y2="500.422" gradientUnits="userSpaceOnUse" spreadMethod="reflect" id="user-fill1"><stop offset="0" stop-color="#A964C8" /><stop offset="0.35" stop-color="#A964C8" /><stop offset="0.87" stop-color="#2D8AD5" /><stop offset="1" stop-color="#2D8AD5" /></linearGradient><linearGradient x1="351.462" y1="233.56" x2="669.496" y2="500.422" gradientUnits="userSpaceOnUse" spreadMethod="reflect" id="user-fill2"><stop offset="0" stop-color="#A964C8" /><stop offset="0.35" stop-color="#A964C8" /><stop offset="0.87" stop-color="#2D8AD5" /><stop offset="1" stop-color="#2D8AD5" /></linearGradient></defs><g clip-path="url(#user-clip0)" transform="translate(-382 -195)"><path d="M637.755 433.872C642.215 515.221 579.577 537.983 508.011 537.983 436.444 537.983 376.676 507.833 383.513 437.11 383.109 425.234 389.59 414.133 398.634 409.891 413.82 402.768 444.753 402.936 507.484 402.997 570.214 403.058 609.164 402.279 621.521 407.947 633.878 413.614 638.011 424.609 637.755 433.872Z" fill="url(#user-fill1)" fill-rule="evenodd" /><path d="M422 285C422 235.847 461.623 196 510.5 196 559.377 196 599 235.847 599 285 599 334.153 559.377 374 510.5 374 461.623 374 422 334.153 422 285Z" fill="url(#user-fill2)" fill-rule="evenodd" /></g></svg>
@@ -161,22 +161,22 @@
 					<img src="icon/calc.svg">
 					<p>Caculator</p>
 				</a>
-				<a oncontextmenu="return showcm(event, 'smlapp', ['run', '运行'])"
+				<a oncontextmenu="return showcm(event, 'smlapp', ['run', 'Run'])"
 					onclick="openapp('run');hide_startmenu();">
 					<img src="icon/run.svg">
 					<p>Run</p>
 				</a>
-				<a oncontextmenu="return showcm(event, 'smlapp', ['about', '关于Win12网页版'])"
+				<a oncontextmenu="return showcm(event, 'smlapp', ['about', 'About Windows 12'])"
 					onclick="openapp('about');hide_startmenu();">
 					<img src="icon/about.svg">
 					<p>About</p>
 				</a>
-				<a oncontextmenu="return showcm(event, 'smlapp', ['taskmgr', '任务管理器'])"
+				<a oncontextmenu="return showcm(event, 'smlapp', ['taskmgr', 'Task Manager'])"
 					onclick="openapp('taskmgr');hide_startmenu();">
 					<img src="icon/taskmgr.png">
 					<p>Task Manager</p>
 				</a>
-				<a oncontextmenu="return showcm(event, 'smlapp', ['notepad', '记事本'])"
+				<a oncontextmenu="return showcm(event, 'smlapp', ['notepad', 'Notepad'])"
 					onclick="openapp('notepad');hide_startmenu();">
 					<img src="icon/notepad.svg">
 					<p>Notepad</p>
@@ -186,7 +186,7 @@
 					<img src="icon/edge.svg">
 					<p>Microsoft Edge</p>
 				</a>
-				<a oncontextmenu="return showcm(event, 'smlapp', ['camera', '相机'])"
+				<a oncontextmenu="return showcm(event, 'smlapp', ['camera', 'Camera'])"
 					onclick="apps.camera.notice();hide_startmenu()">
 					<img src="icon/camera.svg">
 					<p>Camera</p>
@@ -201,7 +201,7 @@
 					<img src="icon/python.svg">
 					<p>Python 3.10.2</p>
 				</a>
-				<a oncontextmenu="return showcm(event, 'smlapp', ['terminal', '终端'])"
+				<a oncontextmenu="return showcm(event, 'smlapp', ['terminal', 'Terminal'])"
 					onclick="openapp('terminal');hide_startmenu();">
 					<img src="icon/terminal.svg">
 					<p>Terminal</p>
@@ -211,23 +211,23 @@
 					<img src="icon/whiteboard.svg">
 					<p>Whiteboard</p>
 				</a>
-				<a oncontextmenu="return showcm(event, 'smlapp', ['defender', 'Windows 安全中心'])"
+				<a oncontextmenu="return showcm(event, 'smlapp', ['defender', 'Windows Security Center'])"
 					onclick="openapp('defender');hide_startmenu();">
 					<img src="icon/defender.svg">
 					<p>Windows Defender</p>
 				</a>
 				<p class="text">Web Application</p>
-				<a oncontextmenu="return showcm(event, 'smlapp', ['bilibili', '哔哩哔哩'])"
-					onclick="openapp('bilibili');hide_startmenu();">
-					<img src="icon/bilibili.png">
-					<p>Bilibili</p>
+				<a oncontextmenu="return showcm(event, 'smlapp', ['ubuntuvm', 'Ubuntu VM'])"
+					onclick="openapp('ubuntuvm');hide_startmenu();">
+					<img src="icon/ubuntu.svg">
+					<p>Ubuntu VM</p>
 				</a>
 				<a oncontextmenu="return showcm(event, 'smlapp', ['vscode', 'Visual Studio Code'])"
 					onclick="openapp('vscode');hide_startmenu();">
 					<img src="icon/vscode.png">
 					<p>Visual Studio Code</p>
 				</a>
-				<a oncontextmenu="return showcm(event, 'smlapp', ['wsa', '适用于 Android™️ 的 Windows 子系统'])"
+				<a oncontextmenu="return showcm(event, 'smlapp', ['wsa', 'Windows Subsystem for Android'])"
 					onclick="openapp('wsa');hide_startmenu();">
 					<img src="icon/wsa.png">
 					<p>Windows Subsystem for Android™️</p>
@@ -283,12 +283,11 @@
 				</div>
 			</div>
 			<div class="pinned">
-				<!-- 已固定 卡片 -->
+				<!-- Pinned cards -->
 				<div class="title">
 					<p>Pinned</p>
 					<div>
 						<a class="a more-btn">All <i class="bi bi-chevron-right"></i></a>
-						<!-- 这个好像没什么必要 -->
 					</div>
 				</div>
 				<div class="apps">
@@ -345,14 +344,14 @@
 						<p>Windows 12</p>
 					</a>
 					<a class="a sm-app enable terminal" onclick="openapp('terminal');hide_startmenu();"
-						oncontextmenu="return showcm(event,'smapp',['terminal','终端'])">
+						oncontextmenu="return showcm(event,'smapp',['terminal','Terminal'])">
 						<img src="icon/terminal.svg">
 						<p>Terminal</p>
 					</a>
 				</div>
 			</div>
 			<div class="tuijian">
-				<!-- 推荐的项目 卡片 -->
+				<!-- Recommended items cards -->
 				<div class="title">
 					<p>Suggested File</p>
 					<div>
@@ -370,7 +369,7 @@
 		</div>
 	</div>
 	<div id="search-win">
-		<!-- 搜索框 -->
+		<!-- Search box -->
 		<input type="text" class="input" placeholder="Enter what you are searching for" id="search-input"
 			oninput="apps.search.search(this.value.length)">
 		<input-before class="bi bi-search"></input-before>
@@ -425,7 +424,7 @@
 				<p class="tit">Widget</p>
 				<button onclick="shownotice('widgets')" class="a act btn btn-icon big"
 					style="background: linear-gradient(100deg, var(--theme-1), var(--theme-2));color:#fff;"
-					win12_title="添加"><i class="bi bi-plus-lg"></i></button>
+					win12_title="Add"><i class="bi bi-plus-lg"></i></button>
 			</div>
 			<div class="content">
 				<div class="template">
@@ -506,7 +505,7 @@
 					<div class="weather">
 						<div class="wg weather">
 							<div class="titbar">
-								<a win12_title="更多" onmouseenter="showdescp(event)" onmouseleave="hidedescp(event)" class="a more notip" onclick="$('.wg.weather>.titbar>.menu').toggleClass('show')"><i class="bi bi-three-dots"></i></a>
+								<a win12_title="More" onmouseenter="showdescp(event)" onmouseleave="hidedescp(event)" class="a more notip" onclick="$('.wg.weather>.titbar>.menu').toggleClass('show')"><i class="bi bi-three-dots"></i></a>
 								<div class="menu">
 									<a class="a move" win12_title="Move" onmouseenter="showdescp(event)" onmouseleave="hidedescp(event)" onclick="if (!edit_mode) { editMode() }"><i class="bi bi-arrows-move"></i></a>
 									<a class="a addtotb" win12_title="Add to taskbar" onmouseenter="showdescp(event)" onmouseleave="hidedescp(event)" onclick="widgets.widgets.addToToolbar('weather')"><i class="bi bi-menu-app"></i></a>
@@ -526,7 +525,7 @@
 					<div class="monitor">
 						<div class="wg monitor">
 							<div class="titbar">
-								<a win12_title="更多" onmouseenter="showdescp(event)" onmouseleave="hidedescp(event)" class="a more notip" onclick="$('.wg.monitor>.titbar>.menu').toggleClass('show')"><i class="bi bi-three-dots"></i></a>
+								<a win12_title="More" onmouseenter="showdescp(event)" onmouseleave="hidedescp(event)" class="a more notip" onclick="$('.wg.monitor>.titbar>.menu').toggleClass('show')"><i class="bi bi-three-dots"></i></a>
 								<div class="menu">
 									<a class="a chose" win12_title="Switch monitor type" onmouseenter="showdescp(event)" onmouseleave="hidedescp(event)" onclick="shownotice('widgets.monitor')"><i class="bi bi-arrow-left-right"></i></a>
 									<a class="a move" win12_title="Move" onmouseenter="showdescp(event)" onmouseleave="hidedescp(event)" onclick="if (!edit_mode) { editMode(); }"><i class="bi bi-arrows-move"></i></a>
@@ -595,11 +594,11 @@
 					<a class="a" style="margin: 0 0 0 170px;font-size: 17px;color: #9dd0fb;">Details ></a>
 				</div>
 				<div class="card" style="grid-column: 3/6;grid-row: 5/7;background:linear-gradient(#00000000 0 30%,var(--bg) 70%),url(img/mc.jpg) bottom;background-size: cover;">
-					<p class="tit" style="margin: 100px 0 -20px 10px;">Early this morning, Minecraft handed over the agency rights to Chinese astronaut Tan Jingyuan, and NetEase was defeated.?</p>
+					<p class="tit" style="margin: 100px 0 -20px 10px;">Early this morning, Minecraft announced a major partnership with a new gaming studio!</p>
 					<a class="a" style="margin: 0 0 0 170px;font-size: 17px;">Details ></a>
 				</div>
 				<div class="card" style="grid-column: 1/4;grid-row: 3/5;background:linear-gradient(#00000000 0 30%,var(--bg) 80%),url(img/yq.jpg) center;background-size: cover;">
-					<p class="tit" style="margin: 120px 0 -20px 10px;">Chinese astronaut Tan Jingyuan successfully landed on the moon yesterday afternoon </p>
+					<p class="tit" style="margin: 120px 0 -20px 10px;">NASA astronaut successfully landed on the moon yesterday afternoon</p>
 					<a class="a" style="margin: 0 0 0 150px;font-size: 17px;">Details ></a>
 				</div>
 				<div class="card" style="grid-column: 3/6;grid-row: 9/11;background:linear-gradient(#00000000 0 30%,var(--bg) 80%),url(img/office.png) center;background-size: cover;">
@@ -614,9 +613,9 @@
 				<div class="card" style="grid-column: 1/3;grid-row: 9/11;background:#171b22;">
 					<p class="tit" style="font-size: 19px;margin: 50px 0 0 10px;color: #fff;">Want to add more fantastic ideas to the news?
 						<br />Please submit it on github</p>
-					<a class="a" win12_title="https://github.com/ltt"
+					<a class="a" win12_title="https://github.com/Mayank10123/win-12"
 						style="margin: 10px 0 0 70px;font-size: 17px;color: #9dd0fb" onclick="
-					window.open('https://github.com/ltt','_blank');">Submit issues ></a>
+					window.open('https://github.com/Mayank10123/win-12','_blank');">Submit issues ></a>
 				</div>
 			</div>
 		</div>
@@ -698,7 +697,7 @@
 	<div id="datebox">
 		<div class="tit">
 			<p class="time">12:29:19</p>
-			<p class="date">Week一, September 22, 2022</p>
+			<p class="date">Monday, September 22, 2022</p>
 			<hr>
 		</div>
 		<div class="cont">
@@ -710,9 +709,9 @@
 		</div>
 	</div>
 	<div id="dock-box">
-		<!-- Dock(任务)栏 -->
+		<!-- Dock (Taskbar) -->
 		<div class="dock dock-start">
-			<a class="dock-btn" id="start-btn" win12_title="开始" onclick="
+			<a class="dock-btn" id="start-btn" win12_title="Start" onclick="
 				if($('#start-menu').hasClass('show')){
 					hide_startmenu();
 				}
@@ -732,7 +731,7 @@
 						$('#start-menu').addClass('show');
 					}, 0);
 				}" oncontextmenu="return showcm(event,'winx',null)">
-				<!-- 开始按钮 -->
+				<!-- Start button -->
 				<svg class="menu" viewBox="0,0,440,439" xmlns="http://www.w3.org/2000/svg"
 					xmlns:xlink="http://www.w3.org/1999/xlink" overflow="hidden">
 					<defs>
@@ -755,7 +754,7 @@
 				</svg>
 				<img src="icon/logo.svg" class="ico">
 			</a>
-			<a class="dock-btn" id="search-btn" win12_title="搜索" onclick="
+			<a class="dock-btn" id="search-btn" win12_title="Search" onclick="
 			if ($('#search-win').hasClass('show')) {
 				$('#search-btn').removeClass('show');
 				$('#search-win').removeClass('show');
@@ -776,7 +775,7 @@
 				<svg class="out" width="26" height="26" viewBox="0,0,228,229" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" overflow="hidden"><defs><clipPath id="clip-search-out-0"><rect x="548" y="268" width="228" height="229"/></clipPath><linearGradient x1="738.799" y1="300.076" x2="608.064" y2="486.786" gradientUnits="userSpaceOnUse" spreadMethod="reflect" id="fill-search-out-1"><stop offset="0" stop-color="#A6A6A6"/><stop offset="0.18" stop-color="#A6A6A6"/><stop offset="0.91" stop-color="#595959"/><stop offset="1" stop-color="#595959"/></linearGradient></defs><g clip-path="url(#clip-search-out-0)" transform="translate(-548 -268)"><path d="M640 268.696C690.41 268.696 731.276 309.574 731.276 360 731.276 378.91 725.529 396.477 715.687 411.049L713.816 413.318 771.4 470.903C777.068 476.571 777.068 485.761 771.4 491.429 765.732 497.097 756.542 497.097 750.874 491.429L693.292 433.847 691.033 435.711C676.465 445.556 658.904 451.305 640 451.304 589.59 451.305 548.724 410.426 548.724 360 548.724 309.574 589.59 268.696 640 268.696Z" fill="url(#fill-search-out-1)" fill-rule="evenodd"/></g></svg>
 				<svg class="in" width="20" height="20" viewBox="0,0,134,134" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" overflow="hidden"><defs><clipPath id="clip-search-in-0"><rect x="573" y="293" width="134" height="134"/></clipPath><linearGradient x1="611.068" y1="280.509" x2="668.932" y2="439.491" gradientUnits="userSpaceOnUse" spreadMethod="reflect" id="fill-search-in-1"><stop offset="0" stop-color="#82CDF6"/><stop offset="0.18" stop-color="#82CDF6"/><stop offset="0.91" stop-color="#4297D6"/><stop offset="1" stop-color="#4297D6"/></linearGradient><image width="132" height="132" xlink:href="data:image/png;base64,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" preserveAspectRatio="none" id="img2"></image><clipPath id="clip-search-in-3"><rect x="574" y="294" width="132" height="132"/></clipPath></defs><g clip-path="url(#clip-search-in-0)" transform="translate(-573 -293)"><path d="M574 360C574 323.549 603.549 294 640 294 676.451 294 706 323.549 706 360 706 396.451 676.451 426 640 426 603.549 426 574 396.451 574 360Z" fill="url(#fill-search-in-1)" fill-rule="evenodd"/><g clip-path="url(#clip-search-in-3)"><use width="100%" height="100%" xlink:href="#img2" transform="translate(574 294)"></use></g></g></svg>
 			</a>
-			<a class="dock-btn" id="widgets-btn" win12_title="小组件" onclick="
+			<a class="dock-btn" id="widgets-btn" win12_title="Widgets" onclick="
 			if($('#widgets').hasClass('show')){
 				hide_widgets();
 			}
@@ -1120,7 +1119,7 @@
 							<div class="applicant-line">
 								<div class="applicant-info">
 									<span>Https-Get</span>
-									<p>Get url : <strong>tjy-gitnub.github......</strong></p>
+									<p>Get url : <strong>Mayank10123.gith......</strong></p>
 								</div>
 							</div>
 							<div class="applicant-line">
@@ -1144,7 +1143,7 @@
 							<div class="applicant-line">
 								<div class="applicant-info">
 									<span>Https-Get</span>
-									<p>Get url :<strong>github.com/tjy-g......</strong></p>
+									<p>Get url :<strong>github.com/Maya......</strong></p>
 								</div>
 							</div>
 						</div>
@@ -1162,7 +1161,7 @@
 				var data = {
 					labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
 					datasets: [{
-						label: '病毒攻击次数',
+						label: 'Virus Attack Count',
 						backgroundColor: gradient,
 						pointBackgroundColor: '#00c7d6',
 						borderWidth: 1,
@@ -1245,20 +1244,20 @@
 				<a class="a user">
 					<svg viewBox="0,0,257,344" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" overflow="hidden"><defs><clipPath id="user-clip1"><rect x="382" y="195" width="257" height="344" /></clipPath><linearGradient x1="351.462" y1="233.56" x2="669.496" y2="500.422" gradientUnits="userSpaceOnUse" spreadMethod="reflect" id="user-fill3"><stop offset="0" stop-color="#A964C8" /><stop offset="0.35" stop-color="#A964C8" /><stop offset="0.87" stop-color="#2D8AD5" /><stop offset="1" stop-color="#2D8AD5" /></linearGradient><linearGradient x1="351.462" y1="233.56" x2="669.496" y2="500.422" gradientUnits="userSpaceOnUse" spreadMethod="reflect" id="user-fill4"><stop offset="0" stop-color="#A964C8" /><stop offset="0.35" stop-color="#A964C8" /><stop offset="0.87" stop-color="#2D8AD5" /><stop offset="1" stop-color="#2D8AD5" /></linearGradient></defs><g clip-path="url(#user-clip1)" transform="translate(-382 -195)"><path d="M637.755 433.872C642.215 515.221 579.577 537.983 508.011 537.983 436.444 537.983 376.676 507.833 383.513 437.11 383.109 425.234 389.59 414.133 398.634 409.891 413.82 402.768 444.753 402.936 507.484 402.997 570.214 403.058 609.164 402.279 621.521 407.947 633.878 413.614 638.011 424.609 637.755 433.872Z" fill="url(#user-fill3)" fill-rule="evenodd" /><path d="M422 285C422 235.847 461.623 196 510.5 196 559.377 196 599 235.847 599 285 599 334.153 559.377 374 510.5 374 461.623 374 422 334.153 422 285Z" fill="url(#user-fill4)" fill-rule="evenodd" /></g></svg>
 					<div>
-						<p>Trung17t</p> 
-						<p>lttthedev@windows12.com</p>
+						<p>Mayank Mishra</p> 
+						<p>mayank2008mishra08@gmail.com</p>
 					</div>
 				</a>
-				<input type="text" class="input" placeholder="查找设置" style="padding-left: 30px;">
+				<input type="text" class="input" placeholder="Find settings" style="padding-left: 30px;">
 				<input-before class="bi bi-search"></input-before>
-				<list class="focs"><!--压缩行数-->
+				<list class="focs"><!-- Compact rows -->
 					<a class="enable system check" onclick="apps.setting.page('system')"><img src="apps/icons/setting/system.png">System</a>
-					<a class="enable blueteeth" onclick="apps.setting.page('blueteeth')"><img src="apps/icons/setting/blueteeth.png">Bluetooth and other devices</a><!-- 蓝牙与设备  @Junchen Yi 2023-9-9-->
-					<a class="enable network" onclick="apps.setting.page('network')"><img src="apps/icons/setting/network.png">Network and Internet</a><!-- 网络和 Internet  @Junchen Yi 2023-9-10-->
+					<a class="enable blueteeth" onclick="apps.setting.page('blueteeth')"><img src="apps/icons/setting/blueteeth.png">Bluetooth and other devices</a><!-- Bluetooth and devices @Mayank -->
+					<a class="enable network" onclick="apps.setting.page('network')"><img src="apps/icons/setting/network.png">Network and Internet</a><!-- Network and Internet @Mayank -->
 					<a class="enable appearance" onclick="apps.setting.page('appearance')"><img src="apps/icons/setting/personal.png">Personalize</a>
-					<a class="enable apps" onclick="apps.setting.page('apps')"><img src="apps/icons/setting/apps.png">Application</a><!-- 应用  @Junchen Yi 2023-9-11-->
-					<a class="enable user" onclick="apps.setting.page('user')"><img src="apps/icons/setting/user.png">Account</a><!-- 账户  @Junchen Yi 2023-9-11-->
-					<a class="enable time" onclick="apps.setting.page('time')"><img src="apps/icons/setting/time.png">Time and language</a><!-- 时间  @Junchen Yi 2023-9-17-->
+					<a class="enable apps" onclick="apps.setting.page('apps')"><img src="apps/icons/setting/apps.png">Application</a><!-- Applications @Mayank -->
+					<a class="enable user" onclick="apps.setting.page('user')"><img src="apps/icons/setting/user.png">Account</a><!-- Account @Mayank -->
+					<a class="enable time" onclick="apps.setting.page('time')"><img src="apps/icons/setting/time.png">Time and language</a><!-- Time @Mayank -->
 					<a><img src="apps/icons/setting/game.png">Game</a>
 					<a><img src="apps/icons/setting/help.png">Accessibility</a>
 					<a class="enable safe" onclick="apps.setting.page('safe')"><img src="apps/icons/setting/safe.png">Privacy and security</a>
@@ -1272,7 +1271,7 @@
 					<div style="display: flex;">
 						<p class="s-icon" style="font-size: 70px;margin: -8px 10px 0px 20px;"></p>
 						<div>
-							<p style="font-size: 28px;text-overflow: ellipsis;white-space: nowrap;">Trung17t</p>
+							<p style="font-size: 28px;text-overflow: ellipsis;white-space: nowrap;">Mayank Mishra</p>
 							<p style="color: #7f7f7f;margin:-8px 0 -5px 0;">Local Account</p>
 							<a style="color: var(--href);text-decoration: underline !important;;" class="a">Sign in</a>
 						</div>
@@ -1294,7 +1293,7 @@
 						<a><icon></icon><div><p>About</p><p>Device specifications, Rename PC, Windows Specifications</p></div><i class="bi bi-chevron-right"></i></a>
 					</div>
 				</div>
-				<!-- 蓝牙与设备  @Junchen Yi 2023-9-9-->
+				<!-- Bluetooth and devices @Mayank -->
 				<div class="cnt blueteeth">
 					<p class="title">Bluetooth with devices</p>
 					<div style="display: flex;">
@@ -1316,8 +1315,8 @@
 						<a><icon></icon><div><p>USB device</p><p>Connect more devices via USB...</p></div><i class="bi bi-chevron-right"></i></a>
 					</div>
 				</div>
-				<!-- 蓝牙与设备 end -->
-				<!-- 网络和 Internet  @Junchen Yi 2023-9-10-->
+				<!-- Bluetooth and devices end -->
+				<!-- Network and Internet @Mayank -->
 				<div class="cnt network">
 					<p class="title">Network and Internet</p>
 					<div style="display: flex;">
@@ -1334,12 +1333,12 @@
 						<a><icon></icon><div><p>VPN</p><p>Add, connect, manage</p></div><i class="bi bi-chevron-right"></i></a>
 						<a><icon></icon><div><p>Mobile Internet</p><p>Share internet over native mobile network</p></div><i class="bi bi-chevron-right"></i></a>
 						<a><icon></icon><div><p>Airplane mode</p><p>Suspend all communications and device connections</p></div><i class="bi bi-chevron-right"></i></a>
-						<a><icon></icon><div><p>代理</p><p>Proxy server for Wifi and Ethernet</p></div><i class="bi bi-chevron-right"></i></a>
+						<a><icon></icon><div><p>Proxy</p><p>Proxy server for Wifi and Ethernet</p></div><i class="bi bi-chevron-right"></i></a>
 						<a><icon></icon><div><p>Dial</p><p>Make calls via Wifi network</p></div><i class="bi bi-chevron-right"></i></a>
 						<a><icon></icon><div><p>Advanced settings</p><p>View all network adapters, network reset</p></div><i class="bi bi-chevron-right"></i></a>
 					</div>
 				</div>
-				<!-- 网络和 Internet end  @Junchen Yi -->
+				<!-- Network and Internet end @Mayank -->
 				<div class="cnt appearance">
 					<p class="title">Personalize</p>
 					<div class="setting-list" style="margin-top: 10px;">
@@ -1372,11 +1371,11 @@
 									value="#1168ae">
 								<a class="a button" style="margin-left: 20px;" onclick="$(':root').css('--theme-1',$('div.app-color>div>input.theme1inp').val());
 									$(':root').css('--theme-2',$('div.app-color>div>input.theme2inp').val());setData('color1',$('div.app-color>div>input.theme1inp').val());
-									setData('color2',$('div.app-color>div>input.theme2inp').val())">应用</a>
+									setData('color2',$('div.app-color>div>input.theme2inp').val())">Apply</a>
 							</div>
 						</div>
 						<a class="dp theme" onclick="$('.dp.theme').toggleClass('show');if (!($('#set-theme>.a').length)) apps.setting.theme_get();">
-							<icon>&#xE771;</icon><div><p>Theme</p><p>Set a theme for Windows Want<span class="a jump" win12_title="https://github.com/lttthedev/lttthedev.github.io-theme" onclick="window.open('https://github.com/lttthedev/lttthedev.github.io-theme','_blank')">上传自己的主题</span>?</p></div><i class="bi bi-chevron-down"></i></a>
+							<icon>&#xE771;</icon><div><p>Theme</p><p>Set a theme for Windows Want<span class="a jump" win12_title="https://github.com/Mayank10123/win-12-theme" onclick="window.open('https://github.com/Mayank10123/win-12-theme','_blank')">upload your own theme</span>?</p></div><i class="bi bi-chevron-down"></i></a>
 						<div class="dp theme" id="set-theme">
 							<loading>
 								<svg width="30px" height="30px" viewBox="0 0 16 16">
@@ -1401,7 +1400,7 @@
 								<a class="a checkbox checked" id="sys_setting_3" onclick="$(this).toggleClass('checked');$(':root').toggleClass('nosd');sys_setting[2]=1-sys_setting[2];saveDesktop();"></a>
 							</div>
 						</div>
-						<div class="border-radius"><icon></icon><div><p>Multi-window transparency</p><p>Turn on transparency for all windows, not just the focused window<span class="a jump" win12_title="开启后将占用大量GPU,可能造成卡顿">详细</span></p></div>
+						<div class="border-radius"><icon></icon><div><p>Multi-window transparency</p><p>Turn on transparency for all windows, not just the focused window<span class="a jump" win12_title="Enabling will use significant GPU resources, may cause lag">Details</span></p></div>
 							<div class="alr">
 								<a class="a checkbox" id="sys_setting_4" onclick="$(this).toggleClass('checked');$(':root').toggleClass('moreblur');sys_setting[3]=1-sys_setting[3];saveDesktop();"></a>
 							</div>
@@ -1418,7 +1417,7 @@
 						</div>
 					</div>
 				</div>
-				<!-- 应用  @Junchen Yi 2023-9-11-->
+				<!-- Applications @Mayank -->
 				<div class="cnt apps">
 					<p class="title">Application</p>
 					<div class="setting-list">
@@ -1431,16 +1430,16 @@
 						<a><icon></icon><div><p>Startup items</p><p>Applications that launch automatically on login</p></div><i class="bi bi-chevron-right"></i></a>
 					</div>
 				</div>
-				<!-- 应用 end  @Junchen Yi -->
-				<!-- 账户  @Junchen Yi 2023-9-11-->
+				<!-- Applications end @Mayank -->
+				<!-- Account @Mayank -->
 				<div class="cnt user">
 					<p class="title">Account</p>
 					<div style="display: flex;">
 						<a class="a user" style="display:flex">
 							<svg viewBox="0,0,257,344" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width: 100px;height: 100px;background-color: var(--hover-b);/* box-shadow: 0 0 10px var(--sd); */width: 60px;width: 60px;height: 60px;border-radius: 50%;padding: 11px;margin-right: 15px;margin-bottom: 15px;" overflow="hidden"><defs><clipPath id="user-clip1"><rect x="382" y="195" width="257" height="344" /></clipPath><linearGradient x1="351.462" y1="233.56" x2="669.496" y2="500.422" gradientUnits="userSpaceOnUse" spreadMethod="reflect" id="user-fill3"><stop offset="0" stop-color="#A964C8" /><stop offset="0.35" stop-color="#A964C8" /><stop offset="0.87" stop-color="#2D8AD5" /><stop offset="1" stop-color="#2D8AD5" /></linearGradient><linearGradient x1="351.462" y1="233.56" x2="669.496" y2="500.422" gradientUnits="userSpaceOnUse" spreadMethod="reflect" id="user-fill4"><stop offset="0" stop-color="#A964C8" /><stop offset="0.35" stop-color="#A964C8" /><stop offset="0.87" stop-color="#2D8AD5" /><stop offset="1" stop-color="#2D8AD5" /></linearGradient></defs><g clip-path="url(#user-clip1)" transform="translate(-382 -195)"><path d="M637.755 433.872C642.215 515.221 579.577 537.983 508.011 537.983 436.444 537.983 376.676 507.833 383.513 437.11 383.109 425.234 389.59 414.133 398.634 409.891 413.82 402.768 444.753 402.936 507.484 402.997 570.214 403.058 609.164 402.279 621.521 407.947 633.878 413.614 638.011 424.609 637.755 433.872Z" fill="url(#user-fill3)" fill-rule="evenodd" /><path d="M422 285C422 235.847 461.623 196 510.5 196 559.377 196 599 235.847 599 285 599 334.153 559.377 374 510.5 374 461.623 374 422 334.153 422 285Z" fill="url(#user-fill4)" fill-rule="evenodd" /></g></svg>
 							<div style="margin-top: 5px;">
-								<p>Lã Thành Trung</p>
-								<p>lttthedev@gmail.com</p>
+								<p>Mayank Mishra</p>
+								<p>mayank2008mishra08@gmail.com</p>
 							</div>
 						</a>
 					</div>
@@ -1455,8 +1454,8 @@
 						<a><icon></icon><div><p>Access work or school account</p><p>Organizational resources such as email, applications, and the web</p></div><i class="bi bi-chevron-right"></i></a>
 					</div>
 				</div>
-				<!-- 账户 end -->
-				<!-- 时间  @Junchen Yi 2023-9-17-->
+				<!-- Account end -->
+				<!-- Time @Mayank -->
 				<div class="cnt time">
 					<p class="title">Time and language</p>
 					<div class="settingTimeItem">
@@ -1474,8 +1473,8 @@
 								<option value="es">Español (Spanish)</option>
 								<option value="fr">Français (French)</option>
 								<option value="de">Deutsch (German)</option>
-								<option value="zh">中文 (Chinese)</option>
-								<option value="ja">日本語 (Japanese)</option>
+								<option value="zh">Chinese</option>
+								<option value="ja">Japanese</option>
 								<option value="ko">한국어 (Korean)</option>
 								<option value="ar">العربية (Arabic)</option>
 								<option value="ru">Русский (Russian)</option>
@@ -1494,7 +1493,7 @@
 						</a>
 					</div>
 				</div>
-				<!-- 时间 end -->
+				<!-- Time end -->
 				<div class="cnt safe">
 					<p class="title">Privacy and security</p>
 					<div class="setting-list">
@@ -1531,7 +1530,7 @@
 		<div class="resize-bar"></div>
 		<div class="titbar">
 			<img src="icon/explorer.svg" class="icon">
-			<!-- <p style="width:min-content">文件资源管理器</p> -->
+			<!-- <p style="width:min-content">File Explorer</p> -->
 			<div class="tabs">
 			</div>
 			<div>
@@ -1583,7 +1582,7 @@
 				<div class="main">
 					<div class="tool micaalt">
 						<a class="a b t act"
-							onclick="apps.explorer.add($('#win-explorer>.path>.tit')[0].dataset.path,'新建文本文档.txt')"><img
+							onclick="apps.explorer.add($('#win-explorer>.path>.tit')[0].dataset.path,'New Text Document.txt')"><img
 								src="apps/icons/explorer/tool-new.png">New</a>
 						<div class="hr"></div>
 						<a class="a b act"><img src="apps/icons/explorer/tool-cut.png"></a>
@@ -1597,7 +1596,7 @@
 					<div class="content" onclick="apps.explorer.del_select()"
 						oncontextmenu="return showcm(event,'explorer.content',null);">
 						<div class="view">
-							<!-- 文件列表  -->
+							<!-- File list -->
 						</div>
 					</div>
 				</div>
@@ -1705,11 +1704,11 @@
 				<h1 class="tit"><span></span>Windows 12 Web Edition</h1>
 				<div style="margin-left: 20px;">
 					<h2 class="tit"><span></span>Introduction</h2>
-					<p>&emsp;&emsp;Windows 12 Web version is an open source project created by Tan Jingyuan, which uses HTML, CSS and JavaScript to simulate and innovate 
+					<p>&emsp;&emsp;Windows 12 Web version is an open source project created by Mayank Mishra, which uses HTML, CSS and JavaScript to simulate and innovate 
 					<p>&emsp;&emsp;operating systems on the Internet.。</p>
-					<p>&emsp;&emsp;This project has been published to GitHub，<a onclick="window.open('https://github.com/lttthedev/lttthedev.github.io','_blank');" win12_title="https://github.com/lttthedev/lttthedev.github.io" class="jump">Click here to view</a>。</p>
-					<p>&emsp;&emsp;If you have any comments or suggestions about the project, please post it on GitHub<a onclick="window.open('https://github.com/lttthedev/lttthedev.github.io/issues','_blank');" win12_title="https://github.com/lttthedev/lttthedev.github.io/issues" class="jump">Submit issues</a>, your issue will be resolved as quickly as possible.</p>
-					<p>&emsp;&emsp;Original Author Xingyuan, click to <a onclick="window.open('https://tjy-gitnub.github.io/','_blank');" win12_title="https://tjy-gitnub.github.io/" class="jump">learn more</a>。</p>
+					<p>&emsp;&emsp;This project has been published to GitHub，<a onclick="window.open('https://github.com/Mayank10123/win-12','_blank');" win12_title="https://github.com/Mayank10123/win-12" class="jump">Click here to view</a>。</p>
+					<p>&emsp;&emsp;If you have any comments or suggestions about the project, please post it on GitHub<a onclick="window.open('https://github.com/Mayank10123/win-12/issues','_blank');" win12_title="https://github.com/Mayank10123/win-12/issues" class="jump">Submit issues</a>, your issue will be resolved as quickly as possible.</p>
+					<p>&emsp;&emsp;Created by Mayank Mishra. <a onclick="window.open('https://github.com/Mayank10123/','_blank');" win12_title="https://github.com/Mayank10123/" class="jump">GitHub</a> | <a onclick="window.open('https://www.linkedin.com/in/mayank-mishra-b80673319/','_blank');" win12_title="https://www.linkedin.com/in/mayank-mishra-b80673319/" class="jump">LinkedIn</a></p>
 					<h2 class="tit"><span></span>Open source instructions</h2>
 					<p>&emsp;&emsp;This project is an open source project. This project uses the EPL v2.0 open source license. The open source license is a </p>
 					<p>&emsp;&emsp;legally binding contract. Please consciously abide by the open source license and respect the labor of others.</p>
@@ -1719,8 +1718,8 @@
 					<p>&emsp;&emsp;licenses, But declare the content of the EPL part and declare that this part continues to follow the EPL agreement。</p>
 					<p>&emsp;&emsp;It is not added or modified on the basis of this project. It only refers to the source code. It does not need to be open source, but it is only for learning purposes。</p>
 					<h2 class="tit"><span></span>Special thanks to</h2>
-					<p>&emsp;&emsp;<strong>Special thanks to @NB-Group</strong></p>
-					<p>&emsp;&emsp;NB-Group made important contributions to the back-end development of this project</p>
+					<p>&emsp;&emsp;<strong>Special thanks to all contributors!</strong></p>
+					<p>&emsp;&emsp;Everyone who contributed made this project possible.</p>
 					<p>&emsp;&emsp;Special thanks for this!</p>
 					<h2 class="tit"><span></span>Contributor</h2>
 					<p>&emsp;&emsp;Thanks to all project contributors (real-time data, calculation method: the number of Commits)</p>
@@ -1734,7 +1733,7 @@
 						</loading>
 					</div>
 					<h2 class="tit"><span></span>Star</h2>
-					<p>&emsp;&emsp;Grateful<a class="jump" win12_title="Can you give me a star? (will jump to：https://github.com/lttthedev/lttthedev.github.io/stargazers)" onclick="window.open('https://github.com/lttthedev/lttthedev.github.io/stargazers','_blank')">All those who support us</a>。</p>
+					<p>&emsp;&emsp;Grateful<a class="jump" win12_title="Can you give me a star? (will jump to：https://github.com/Mayank10123/win-12/stargazers)" onclick="window.open('https://github.com/Mayank10123/win-12/stargazers','_blank')">All those who support us</a>。</p>
 					<div id="StarShow">
 						<loading>
 							<svg width="30px" height="30px" viewBox="0 0 16 16">
@@ -1759,7 +1758,7 @@
 						&emsp;&emsp;-Detail optimization and repair</p>
 					</details>
 					<details><summary><span>v7.3.4</span> Edge updates</summary><p>
-						&emsp;&emsp;(Updated from @lh11117)<br>
+						&emsp;&emsp;(Updated from @Mayank)<br>
 						&emsp;&emsp;-Edge supports full screen<br/>
 						&emsp;&emsp;-Edge supports favorites</p>
 					</details>
@@ -1774,7 +1773,7 @@
 						&emsp;&emsp;- Fix the problem that BIOS cannot be accessed correctly (update from @ludonghengsb)</p>
 					</details>
 					<details><summary><span>v7.3.0</span> Desktop widgets, Dock auto-hide, calculator improvements and Windows updates</summary><p>
-						&emsp;&emsp;(Update via @User782Tec)<br />
+						&emsp;&emsp;(Update via @Mayank)<br />
 						&emsp;&emsp;-New desktop widgets are added, which can be added to the desktop and adjusted in position<br/>
 						&emsp;&emsp;-A new editing mode has been added, which can quickly edit the position of widgets and provides related shortcut entrances<br/>
 						&emsp;&emsp;-Added the function of making the window full screen and the Dock automatically hidden when not in use<br/>
@@ -1788,13 +1787,13 @@
 						&emsp;&emsp;-Other details and fixes</p>
 					</details>
 					<details><summary><span>v7.2.1</span> README update, "About" application displays real-time Star number, and personalized settings support saving</summary><p>
-						&emsp;&emsp;(Updated from @lh11117 )<br/>
+						&emsp;&emsp;(Updated from @Mayank )<br/>
 						&emsp;&emsp;-README update<br/>
 						&emsp;&emsp;-The "About" app displays the real-time number of Stars<br/>
 						&emsp;&emsp;-Personalized settings support saving<br /></p>
 						</details>
 						<details><summary><span>v7.2.0</span> Optimize operation, add Windows 12 applications, add WSA</summary><p>
-						&emsp;&emsp;(Updated from @lh11117 )<br />
+						&emsp;&emsp;(Updated from @Mayank )<br />
 						&emsp;&emsp;-Optimized operation<br />
 						&emsp;&emsp;-Add Windows 12 apps<br />
 						&emsp;&emsp;-Add WSA<br />
@@ -1805,7 +1804,7 @@
 						&emsp;&emsp;-Task Manager supports pinned<br /></p>
 					</details>
 					<details><summary><span>v7.1.0</span> Further repairs to the calculator, dark mode for offline pages</summary><p>
-						&emsp;&emsp;(Updated from @lh11117)<br />
+						&emsp;&emsp;(Updated from @Mayank)<br />
 						&emsp;&emsp;-Further fixed the calculator accuracy defect and the problem of accepting illegal input content<br />
 						&emsp;&emsp;-Added a dark mode version to the offline interface of the Microsoft Edge browser<br />
 						&emsp;&emsp;-Some other detail fixes<br /></p>
@@ -1816,21 +1815,21 @@
 						&emsp;&emsp;-Only allow calc-input to enter numbers (from @iewnfod)<br /></p>
 					</details>
 					<details><summary><span>v7.0.1</span> Explorer tabs, offline interface and news</summary><p>
-						&emsp;&emsp;-File Explorer tab (from @tjy-gitnub)<br />
-						&emsp;&emsp;-Added an offline interface for the Microsoft Edge browser (from @User782Tec)<br />
+						&emsp;&emsp;-File Explorer tab (from @Mayank)<br />
+						&emsp;&emsp;-Added an offline interface for the Microsoft Edge browser (from @Mayank)<br />
 						&emsp;&emsp;-New news (from @Nick-DL)<br />
 						&emsp;&emsp;-Optimize some UI<br />
 						&emsp;&emsp;-Detail optimization and repair</p>
 					</details>
 					<details><summary><span>v7.0.0</span> AI assistant, multiple new applications and functions</summary><p>
-						&emsp;&emsp;-Windows 12 AI Copilot (@NB-Group provides api, @tjy-gitnub magic modification)<br />
-						&emsp;&emsp;-Task Manager (provided by @User782Tec)<br />
-						&emsp;&emsp;-Security Center (provided by @NB-Group)<br />
-						&emsp;&emsp;-Adaptive file system (provided by @NB-Group) (Don’t ask me why it’s only released now, ask @NB-Group)<br />
-						&emsp;&emsp;-Window Mica effect (provided by @tjy-gitnub, enabled in settings)<br />
-						&emsp;&emsp;-File Explorer Navigation Bar (Contributed by @User782Tec)<br />
-						&emsp;&emsp;-Task Manager Widget (provided by @User782Tec)<br />
-						&emsp;&emsp;-New wallpaper (provided by @tjy-gitnub)<br />
+						&emsp;&emsp;-Windows 12 AI Copilot (@Mayank provides api, @Mayank magic modification)<br />
+						&emsp;&emsp;-Task Manager (provided by @Mayank)<br />
+						&emsp;&emsp;-Security Center (provided by @Mayank)<br />
+						&emsp;&emsp;-Adaptive file system (provided by @Mayank) (Don’t ask me why it’s only released now, ask @Mayank)<br />
+						&emsp;&emsp;-Window Mica effect (provided by @Mayank, enabled in settings)<br />
+						&emsp;&emsp;-File Explorer Navigation Bar (Contributed by @Mayank)<br />
+						&emsp;&emsp;-Task Manager Widget (provided by @Mayank)<br />
+						&emsp;&emsp;-New wallpaper (provided by @Mayank)<br />
 						&emsp;&emsp;-New news (from @for-the-zero)<br />
 						&emsp;&emsp;-Fixed catastrophic terminal bug<br />
 						&emsp;&emsp;-Optimize some UI<br />
@@ -1839,19 +1838,19 @@
 					<details>
 					<summary><span>v6.0.0</span> File system, window size, weather widget, taskbar widget</summary>
 					<p>
-						&emsp;&emsp;-New file system (provided later by @NB-Group)<br />
-						&emsp;&emsp;-Window resizing functionality (provided by @User782Tec)<br />
-						&emsp;&emsp;-Save desktop layout (provided by @User782Tec)<br />
-						&emsp;&emsp;-Weather widget (provided by @tjy-gitnub)<br />
-						&emsp;&emsp;-Widget added to taskbar (provided by @tjy-gitnub, currently only supports weather widget)<br />
-						&emsp;&emsp;-Introducing a new prompt box (provided by @tjy-gitnub)<br />
+						&emsp;&emsp;-New file system (provided later by @Mayank)<br />
+						&emsp;&emsp;-Window resizing functionality (provided by @Mayank)<br />
+						&emsp;&emsp;-Save desktop layout (provided by @Mayank)<br />
+						&emsp;&emsp;-Weather widget (provided by @Mayank)<br />
+						&emsp;&emsp;-Widget added to taskbar (provided by @Mayank, currently only supports weather widget)<br />
+						&emsp;&emsp;-Introducing a new prompt box (provided by @Mayank)<br />
 						&emsp;&emsp;-New feedback channel<br />
 						&emsp;&emsp;-Fixed the problem that sometimes the boot animation could not be displayed correctly<br />
 						&emsp;&emsp;-Fixed the problem that the login interface is not displayed<br />
 						&emsp;&emsp;-Adapt to new theme formats and speed up preview display<br />
 						&emsp;&emsp;-Detail optimization and repair</p>
 					</details>
-					<!-- 全部列出来那这个更多意义何在？ -->
+					<!-- All listed, so what is the point of "more"? -->
 					<a onclick="window.open('update.md','_blank');" win12_title="update.md" class="a jump" style="text-align: center;">More</a>
 				</div>
 			</div>
@@ -1881,7 +1880,7 @@
 			<div class="text-box" contenteditable="true" spellcheck="false">
 				<p>Type here...</p>
 			</div>
-			<a href="" download="未命名.html" style="opacity: 0;" class="save">Save as</a>
+			<a href="" download="untitled.html" style="opacity: 0;" class="save">Save as</a>
 		</div>
 	</div>
 	<div class="window notepad-fonts">
@@ -1922,7 +1921,7 @@
 						<a class="option">Founder Comfort</a>
 						<a class="option">Chinese regular script</a>
 						<a class="option">Italian</a>
-						<a class="option">宋体</a>
+						<a class="option">Arial</a>
 						<a class="option">Youyuan</a>
 					</list>
 				</div>
@@ -1941,7 +1940,7 @@
 							<a class="option">No. 4</a>
 							<a class="option">Little Four</a>
 							<a class="option">No. 5</a>
-							<a class="option">小五</a>
+							<a class="option">Small</a>
 						</list>
 					</div>
 					<div class="select-input" id="win-notepad-font-style">
@@ -1961,7 +1960,7 @@
 				</div>
 				<div class="preview-box">
 					<div>Hello</div>
-					<div>你好</div>
+					<div>Hello</div>
 					<div>こんにちは</div>
 				</div>
 			</div>
@@ -2074,8 +2073,8 @@
 				</a>
 		    </div>
 			<div id="save-bar" style="margin:10px;margin-top: 3px;">
-				<!--收藏夹-->
-				<a onclick="apps.edge.goto('https://tjy-gitnub.github.io/')" win12_title="https://tjy-gitnub.github.io/" class="save-item"><i class="bi bi-file-earmark"></i>Star source</a>
+				<!-- Favorites -->
+				<a onclick="apps.edge.goto('https://github.com/Mayank10123/')" win12_title="https://github.com/Mayank10123/" class="save-item"><i class="bi bi-file-earmark"></i>Mayank's Site</a>
 				<a onclick="apps.edge.goto('https://www.bing.com')" win12_title="https://www.bing.com" class="save-item"><i class="bi bi-file-earmark"></i>Bing</a>
 			</div>
 			<iframe frameborder="0" class="0 show" onmousemove="if(apps.edge.fuls){$('.edge>.titbar').hide();$('.edge>.content>.tool').hide()}">
@@ -2109,22 +2108,22 @@
 			<!-- <iframe src="https://github1s.com/" frameborder="0" style="width: 100%; height: 100%;" loading="lazy"></iframe> -->
 		</div>
 	</div>
-	<div class="window bilibili webapp">
+	<div class="window ubuntuvm webapp">
 		<div class="resize-bar"></div>
 		<div class="titbar">
-			<img src="icon/bilibili.png" class="icon">
-			<p>Trung17t</p>
+			<img src="icon/ubuntu.svg" class="icon">
+			<p>Mayank Mishra</p>
 			<div>
-				<a class="a wbtg red" onclick="hidewin('bilibili')"><i class="bi bi-x-lg"></i></a>
-				<a class="a wbtg max" onclick="maxwin('bilibili')"><i class="bi bi-app"></i></a>
-				<a class="a wbtg" onclick="minwin('bilibili')"><i class="bi bi-dash-lg"></i></a>
+				<a class="a wbtg red" onclick="hidewin('ubuntuvm')"><i class="bi bi-x-lg"></i></a>
+				<a class="a wbtg max" onclick="maxwin('ubuntuvm')"><i class="bi bi-app"></i></a>
+				<a class="a wbtg" onclick="minwin('ubuntuvm')"><i class="bi bi-dash-lg"></i></a>
 			</div>
 		</div>
 		<div class="loadback">
-			<img src="icon/bilibili.png" class="icon">
+			<img src="icon/ubuntu.svg" class="icon">
 		</div>
-		<div class="content" id="win-bilibili">
-			<!-- <iframe src="https://bilibili.com/" frameborder="0" style="width: 100%; height: 100%;" loading="lazy"></iframe> -->
+		<div class="content" id="win-ubuntuvm">
+			<!-- <iframe src="https://portfolio-main-3jnu.onrender.com/" frameborder="0" style="width: 100%; height: 100%;" loading="lazy"></iframe> -->
 		</div>
 	</div>
 	<div class="window wsa">
@@ -2230,7 +2229,7 @@
 				</div>
 			</div>
 			<p>
-				&emsp;&emsp;Welcome to the Camera app! This application is developed by User782Tec and maintained by tjy-gitnub. <br />
+				&emsp;&emsp;Welcome to the Camera app! This application is developed and maintained by Mayank. <br />
 				&emsp;&emsp;While in use, this app will obtain permission to access your camera (for operations such as taking photos). This application will not upload any of your personal information (including the photos taken) to the server, nor will it be disclosed to others. <br />
 				&emsp;&emsp;If you do not agree to the above agreement, you will not be able to use this application.
 			</p>
@@ -2366,7 +2365,7 @@
 	</div>
 	<div class="window winver">
 		<div class="titbar">
-			<p>关于 Windows</p>
+			<p>About Windows</p>
 			<div>
 				<a class="a wbtg red" onclick="hidewin('winver');"><i class="bi bi-x-lg"></i></a>
 			</div>
@@ -2397,7 +2396,7 @@
 		<div class="resize-bar"></div>
 		<div class="titbar">
 			<img src="icon/taskmgr.png" class="icon">
-			<span style="font-size: 15px;margin-top: 9px;">Task manager</span><!--这里不能用p，否则会有神奇的特性（bug）发生-->
+			<span style="font-size: 15px;margin-top: 9px;">Task manager</span><!-- Cannot use p tag here, it causes a bug -->
 			<div style="flex-grow: 1;display: flex;align-items: center;justify-content: center;">
 			    <input type="text" class="input" style="width: 75%;" placeholder="Type the name to search for" id="tsk-search" oninput="apps.taskmgr.generateProcesses()" value=""></input>
 			</div>
@@ -2411,7 +2410,7 @@
 			<img src="icon/taskmgr.png" class="icon">
 		</div>
 		<div class="content" id="win-taskmgr" style="height:100%">
-			<script> //让设置按钮到最底下
+			<script> // Move settings button to the bottom
 				setInterval(()=>{
 					document.getElementById('set-seting-to-bottom').style.height = (document.getElementById('win-taskmgr').clientHeight-document.getElementById('tsk-setting').clientHeight*document.getElementById('tsk-pages').getElementsByTagName('a').length-10) + "px";
 				},1145);
@@ -2432,7 +2431,7 @@
 					}
 					hide = !hide
 				}
-				fold();//别问我这里为什么要执行一次，问就是有bug
+				fold();// Run once here to fix a bug
 			</script> 
 			<div class="menu" style="height:100%">
 				<list class="focs" id="tsk-pages" style="height:100%">
@@ -2443,23 +2442,23 @@
 						</svg>
 						<p>Process</p>
 					</a>
-					<a class="performance" onclick="apps.taskmgr.page('performance')" win12_title="性能"><icon class="s-icon"></icon><p>Performance</p></a>
-					<!--添加新的分页请在这条注释前面添加-->
+					<a class="performance" onclick="apps.taskmgr.page('performance')" win12_title="Performance"><icon class="s-icon"></icon><p>Performance</p></a>
+					<!--Add new pages before this comment-->
 					<div id="set-seting-to-bottom"></div>
-					<a class="setting" onclick="apps.taskmgr.page('setting')" id="tsk-setting" style="position: relative;bottom:0px;left:0px;" win12_title="设置"><i class="bi bi-gear"></i><p>Set up</p></a>
+					<a class="setting" onclick="apps.taskmgr.page('setting')" id="tsk-setting" style="position: relative;bottom:0px;left:0px;" win12_title="Settings"><i class="bi bi-gear"></i><p>Set up</p></a>
 					<span class="focs" style="top: -445px; left: 0px;"></span>
 				</list>
 			</div>
 			<div class="main">
 				<div class="cnt processes show">
 					<div class="tit">
-						<p>进程</p>
+						<p>Processes</p>
 						<hr>
 					</div>
 					<table>
 						<thead>
 							<tr class="title">
-								<th>进程名称</th>
+								<th>Process Name</th>
 								<th class="align-right" onclick="apps.taskmgr.changeSort(this.childNodes[0], 'cpu');"><i class="bi bi-chevron-down"></i><div class="value">11.4%</div>CPU</th>
 								<th class="align-right" onclick="apps.taskmgr.changeSort(this.childNodes[0], 'memory');"><i class="bi"></i><div class="value">11.4%</div>Memory</th>
 								<th class="align-right" onclick="apps.taskmgr.changeSort(this.childNodes[0], 'disk');"><i class="bi"></i><div class="value">11.4%</div>Hard Disk</th>
@@ -2467,13 +2466,13 @@
 							</tr>
 						</thead>
 						<tbody class="view">
-							<!-- 进程信息 -->
+							<!-- Process information -->
 						</tbody>
 					</table>
 				</div>
 				<div class="cnt 404">
 					<div class="content" style="text-align: center;position:absolute;left:calc(50% - 25px);top:calc(50% - 35px);">
-						<p><b>No filter results</b><br />Please try another name<span style="text-decoration:line-through" win12_title="你想让开发者秃头吗？QwQ！(双击隐藏此消息)" ondblclick="$(this).hide()">, publisher or PID </span>Type to filter.</p>
+						<p><b>No filter results</b><br />Please try another name<span style="text-decoration:line-through" win12_title="Do you want the developer to go bald? QwQ! (double-click to hide this message)" ondblclick="$(this).hide()">, publisher or PID </span>Type to filter.</p>
 						<br />
 						<a onclick="document.getElementById('tsk-search').value='';apps.taskmgr.generateProcesses()" style="cursor: pointer;color:var(--href);">Reset filter</a>
 					</div>
@@ -2556,12 +2555,12 @@
 									<div class="left">% Utilization</div>
 									<div class="right">100%</div>
 								</div>
-								<div class="graph" win12_title="CPU活动">
+								<div class="graph" win12_title="CPU activity">
 									<canvas class="bg" width="1920" height="1080"></canvas>
 									<canvas class="chart" width="1920" height="1080"></canvas>
 								</div>
 								<div class="graph-msg bottom">
-									<div class="left">60 秒</div>
+									<div class="left">60 sec</div>
 									<div class="right">0</div>
 								</div>
 								<div class="information">
@@ -2598,12 +2597,12 @@
 									<div class="left">Memory usage</div>
 									<div class="right">100GB</div>
 								</div>
-								<div class="graph" win12_title="使用中">
+								<div class="graph" win12_title="In use">
 									<canvas class="bg" width="1920" height="1080"></canvas>
 									<canvas class="chart" width="1920" height="1080"></canvas>
 								</div>
 								<div class="graph-msg bottom">
-									<div class="left">60 秒</div>
+									<div class="left">60 sec</div>
 									<div class="right">0</div>
 								</div>
 								<div class="graph-msg top">
@@ -2642,7 +2641,7 @@
 									<div class="left">Active time</div>
 									<div class="right">100%</div>
 								</div>
-								<div class="graph" win12_title="磁盘处理读取或写入请求的时间百分比">
+								<div class="graph" win12_title="Percentage of time disk is processing read or write requests">
 									<canvas class="bg" width="1920" height="1080"></canvas>
 									<canvas class="chart" width="1920" height="1080"></canvas>
 								</div>
@@ -2652,7 +2651,7 @@
 								</div>
 								<div class="graph-msg top">
 									<div class="left">Disk transfer rate</div>
-									<div class="right">100 MB/秒</div>
+									<div class="right">100 MB/s</div>
 								</div>
 								<div class="graph disk2 minor" style="margin-bottom: 10px; height: 70px !important; min-height: 70px !important;">
 									<canvas class="chart2" width="1920" height="280"></canvas>
@@ -2662,8 +2661,8 @@
 									<div class="left">
 										<div><div class="top">Active time</div><div class="value">1.14%</div></div>
 										<div><div class="top">Average response time</div><div class="value">0.014 millisecond</div></div>
-										<div style="border-left: 2px #008000 solid; padding-left: 10px;"><div class="top">Reading speed</div><div class="value">14 KB/秒</div></div>
-										<div style="border-left: 2px #008000 dotted; padding-left: 10px;"><div class="top">Writing speed</div><div class="value">114 KB/秒</div></div>
+										<div style="border-left: 2px #008000 solid; padding-left: 10px;"><div class="top">Reading speed</div><div class="value">14 KB/s</div></div>
+										<div style="border-left: 2px #008000 dotted; padding-left: 10px;"><div class="top">Writing speed</div><div class="value">114 KB/s</div></div>
 									</div>
 									<div class="right">
 										<table>
@@ -2687,7 +2686,7 @@
 									<div class="left">Throughput</div>
 									<div class="right">100 Mbps</div>
 								</div>
-								<div class="graph" win12_title="此网络上的发送和接收活动">
+								<div class="graph" win12_title="Send and receive activity on this network">
 									<canvas class="bg" width="1920" height="1080"></canvas>
 									<canvas class="chart" width="1920" height="1080"></canvas>
 								</div>
@@ -2776,7 +2775,7 @@
 									<div class="left">Dedicated GPU memory utilization</div>
 									<div class="right">16 GB</div>
 								</div>
-								<div class="graph gpu2-1 minor" style="height: 70px !important; min-height: 70px !important;" win12_title="专用 GPU 内存利用率">
+								<div class="graph gpu2-1 minor" style="height: 70px !important; min-height: 70px !important;" win12_title="Dedicated GPU memory utilization">
 									<canvas class="chart2" width="1920" height="280"></canvas>
 									<canvas class="bg2" width="1920" height="280"></canvas>
 								</div>
@@ -2784,7 +2783,7 @@
 									<div class="left">Shared GPU memory utilization</div>
 									<div class="right">32 GB</div>
 								</div>
-								<div class="graph gpu2-2 minor" style="height: 70px !important; min-height: 70px !important; margin-bottom: 10px" win12_title="共享 GPU 内存利用率">
+								<div class="graph gpu2-2 minor" style="height: 70px !important; min-height: 70px !important; margin-bottom: 10px" win12_title="Shared GPU memory utilization">
 									<canvas class="chart2" width="1920" height="280"></canvas>
 									<canvas class="bg2" width="1920" height="280"></canvas>
 								</div>
@@ -2824,12 +2823,12 @@
 				</div>
 				<div class="cnt setting">
 					<style>
-						/* 隐藏原始复选框 */
+						/* Hide original checkbox */
 						input[type="checkbox"] {
 							display: none;
 						}
 
-						/* 自定义复选框的外观 */
+						/* Custom checkbox appearance */
 						label {
 							display: inline-block;
 							position: relative;
@@ -2838,7 +2837,7 @@
 							cursor: pointer;
 						}
 
-						/* 复选框的外观 */
+						/* Checkbox appearance */
 						label:before {
 							content: "";
 							display: inline-block;
@@ -2852,12 +2851,12 @@
 							top: 1px;
 						}
 
-						/* 复选框被选中时的外观 */
+						/* Checkbox checked appearance */
 						input[type="checkbox"]:checked + label:before {
 							background-color: #46afe4;
 						}
 
-						/* 复选框的勾选图标 */
+						/* Checkbox checkmark icon */
 						label:after {
 							content: "\2713";
 							font-size: 14px;
@@ -2869,7 +2868,7 @@
 							display: none;
 						}
 
-						/* 复选框被选中时的勾选图标 */
+						/* Checkbox checked checkmark icon */
 						input[type="checkbox"]:checked + label:after {
 							display: block;
 						}
@@ -2880,7 +2879,7 @@
 					</div>
 					<div>
 						<h3>Window management</h3>
-						<input type="checkbox" id="tsk-setting-topmost" name="tsk-setting-topmost" style="height: 15px;width:15px;color:#fff;" onclick="if(checked){topmost[topmost.length]='taskmgr'}else{topmost.splice(topmost.indexOf('taskmgr',1))};hidewin('taskmgr');apps.taskmgr.page('processes');$('#win-taskmgr>.menu>list.focs>a')[0].click();saveDesktop();document.getElementById('tsk-search').value='';setTimeout('openapp(`taskmgr`);apps.taskmgr.generateProcesses();',300);"/><label for="tsk-setting-topmost" style="font-size: 15px;">置于顶层</label>
+						<input type="checkbox" id="tsk-setting-topmost" name="tsk-setting-topmost" style="height: 15px;width:15px;color:#fff;" onclick="if(checked){topmost[topmost.length]='taskmgr'}else{topmost.splice(topmost.indexOf('taskmgr',1))};hidewin('taskmgr');apps.taskmgr.page('processes');$('#win-taskmgr>.menu>list.focs>a')[0].click();saveDesktop();document.getElementById('tsk-search').value='';setTimeout('openapp(`taskmgr`);apps.taskmgr.generateProcesses();',300);"/><label for="tsk-setting-topmost" style="font-size: 15px;">Always on top</label>
 					</div>
 				</div>
 			</div>
@@ -2889,10 +2888,10 @@
 	<script src="data/tasks.js"></script>
 	<script src="desktop.js"></script>
 	<script src="module/tab.js"></script>
-	<script src="scripts/setting_getTime.js"></script><!-- 设置页面获取时间逻辑 @Junchen Yi 2023-9-17-->
+	<script src="scripts/setting_getTime.js"></script><!-- Settings page time logic @Mayank -->
 	<script src="https://fastly.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js" async></script>
 	<!-- <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
-	<script defer src="https://pyscript.net/latest/pyscript.js"></script> -->         <!-- PyScript, 已弃用 -->
+	<script defer src="https://pyscript.net/latest/pyscript.js"></script> -->         <!-- PyScript, deprecated -->
 	<script src="https://cdn.staticfile.org/ace/1.23.0/ace.min.js"></script>
 	<script src="https://cdn.staticfile.org/ace/1.23.0/ext-language_tools.min.js"></script>
 	<script src="https://cdn.staticfile.org/ace/1.23.0/ext-error_marker.min.js"></script>

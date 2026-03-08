@@ -1,6 +1,6 @@
-let dymanic = [
+﻿let dymanic = [
   'api.github.com',
-  'tjy-gitnub.github.io/win12-theme',
+  'mayank10123.github.io/win-12-theme',
   'win12server.freehk.svipss.top',
   'assets.msn.cn'
 ]
@@ -15,7 +15,7 @@ this.addEventListener('fetch', function (event) {
         }
       });
       if (fl) {
-        console.log('动态请求', event.request.url);
+        console.log('Dynamic request', event.request.url);
         return fetch(event.request);
       }
       return res ||
@@ -24,7 +24,7 @@ this.addEventListener('fetch', function (event) {
             // console.log(event.request);
             const responeseClone = responese.clone();
             caches.open('def').then(cache => {
-              console.log('下载数据', responeseClone.url);
+              console.log('Downloading data', responeseClone.url);
               cache.put(event.request, responeseClone);
             })
             return responese;
@@ -53,7 +53,7 @@ function update(force = false) {
           key.forEach(k => {
             let fl = true;
             if (force) {
-              console.log('删除数据', k.url);
+              console.log('Deleting data', k.url);
               return cc.delete(k);
             }
             nochanges.forEach(fi => {
@@ -63,7 +63,7 @@ function update(force = false) {
               }
             });
             if (fl) {
-              console.log('删除数据', k.url);
+              console.log('Deleting data', k.url);
               return cc.delete(k);
             }
           });
@@ -86,7 +86,7 @@ this.addEventListener('activate', update);
 
 // let dongtai=[
 //   'api.github.com',
-//   'tjy-gitnub.github.io/win12-theme',
+//   'mayank10123.github.io/win-12-theme',
 //   'win12server.freehk.svipss.top',
 //   'assets.msn.cn'
 // ]
@@ -100,14 +100,14 @@ this.addEventListener('activate', update);
 //           return;
 //         }
 //       });
-//       if(fl){console.log('动态请求',event.request.url);return fetch(event.request);}
+//       if(fl){console.log('Dynamic request',event.request.url);return fetch(event.request);}
 //       return res ||
 //         fetch(event.request)
 //           .then(responese => {
 //             // console.log(event.request);
 //             const responeseClone = responese.clone();
 //             caches.open('def').then(cache => {
-//               console.log('下载数据', responeseClone.url);
+//               console.log('Downloading data', responeseClone.url);
 //               cache.put(event.request, responeseClone);
 //             })
 //             return responese;
@@ -129,7 +129,7 @@ this.addEventListener('activate', update);
 // let flag = false;
 // this.addEventListener('activate', function (event) {
 //   flag = true;
-//   console.log('开始更新');
+//   console.log('Start updating');
 //   event.waitUntil(
 //     caches.keys().then(keys => {
 //       if (keys.includes('def')) {
@@ -144,7 +144,7 @@ this.addEventListener('activate', update);
 //                 }
 //               });
 //               if (fl) {
-//                 console.log('删除数据', k.url);
+//                 console.log('Deleting data', k.url);
 //                 return cc.delete(k);
 //               }
 //             });

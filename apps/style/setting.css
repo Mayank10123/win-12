@@ -426,7 +426,7 @@ div.app-color input[type=color] {
 	    margin-right: 15px;
 	    margin-bottom: 15px;
 }
-/* 时间 必须样式 @Junchen Yi 2023-9-16 */
+/* Time styles @Mayank */
 .selectLanguageA{
     min-height: 67px;
     display: flex;
@@ -447,7 +447,7 @@ div.app-color input[type=color] {
 			margin-right: -20px;
 }
 .languageSelect option {
-    /* 添加样式，例如设置字体颜色和背景颜色 */
+    /* Add styles for font color and background color */
 	color: var(--text);
     background-color: #fff;
     padding: 5px;
@@ -468,4 +468,4 @@ div.app-color input[type=color] {
 .settingTime{
 	font-size: 28px;
 }
-/* 时间 必须样式 end @Junchen Yi 2023-9-16 */
+/* Time styles end @Mayank */

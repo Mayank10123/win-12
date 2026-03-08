@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Windows 12 Browser</title> <!-- 优化：修改页面标题为描述性标题 -->
+    <title>Windows 12 Browser</title> <!-- Optimized: descriptive page title -->
     <style>
         * {
             margin: 0px;
@@ -77,20 +77,20 @@
             <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
         </svg>
         <input type="text" onkeyup="if(event.keyCode==13){if (!/^(((ht|f)tps?):\/\/)?([^!@#$%^&*?.\s-]([^!@#$%^&*?.\s]{0,63}[^!@#$%^&*?.\s])?\.)+[a-z]{2,6}\/?/.test(this.value)) {
-            window.location='https://google.com/search?q='+encodeURIComponent(this.value);  //encodeURIComponent 可以对搜索内容进行编码
-            //可能报错
+            window.location='https://google.com/search?q='+encodeURIComponent(this.value);  //encodeURIComponent encodes the search content
+            //may throw error
             apps.edge.rename(this.value);
         }
         else if (!/^https?:\/\//.test(this.value)) {
             window.location='http://' + this.value;
-            //可能报错
+            //may throw error
             apps.edge.rename('http://' + this.value);
         }
         else {
             window.location=this.value;
-            //可能报错
+            //may throw error
             apps.edge.rename(this.value);
-        }}" placeholder="在必应中搜索，或输入一个网址">
+        }}" placeholder="Search on Bing, or enter a URL">
     </div>
 </body>
 

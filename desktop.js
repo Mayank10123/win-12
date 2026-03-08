@@ -1,10 +1,10 @@
-// 后端服务器
+﻿// Backend server
 // loadlang();
 const server = 'http://win12server.freehk.svipss.top/';
 const pages = {
-    'get-title': '', // 获取标题
+    'get-title': '', // Get title
 };
-//settings page list right hight light <span>       @Junchen Yi 
+//settings page list right hight light <span>       @Mayank 
 document.querySelectorAll(`list.focs`).forEach(li => {
     li.addEventListener('click', e => {
         let _ = li.querySelector('span.focs'), la = li.querySelector('a.check'),
@@ -17,11 +17,11 @@ document.querySelectorAll(`list.focs`).forEach(li => {
         }, 500);
     })
 });
-// 禁止拖拽图片
+// Disable image dragging
 $('img').on('dragstart', () => {
     return false;
 });
-// 右键菜单
+// Context menu
 $('html').on('contextmenu', () => {
     return false;
 });
@@ -38,7 +38,7 @@ function addMenu() {
     var childDivs = parentDiv.getElementsByTagName('div');
 
     for (var i = 0; i < childDivs.length; i++) {
-        if (i <= 4) {//win12内置的5个图标不添加
+        if (i <= 4) {// Skip 5 built-in win12 icons
             continue;
         }
         var div = childDivs[i];
@@ -53,7 +53,7 @@ function addMenu() {
     }
 }
 var run_cmd = '';
-let nomax = { 'calc': 0 /* 其实，计算器是可以最大化的...*/, 'notepad-fonts': 0, 'camera-notice': 0, 'winver': 0, 'run': 0, 'wsa': 0 };
+let nomax = { 'calc': 0 /* Calculator can actually be maximized... */, 'notepad-fonts': 0, 'camera-notice': 0, 'winver': 0, 'run': 0, 'wsa': 0 };
 let nomin = { 'notepad-fonts': 0, 'camera-notice': 0, 'run': 0 };
 var topmost = [];
 var sys_setting = [1, 1, 1, 0, 0, 1];
@@ -96,7 +96,7 @@ let cms = {
     'desktop': [
         ['<i class="bi bi-arrow-clockwise"></i> Refresh', `$('#desktop').css('opacity','0');setTimeout(()=>{$('#desktop').css('opacity','1');},100);setIcon();`],
         ['<i class="bi bi-circle-square"></i> Switch theme', 'toggletheme()'],
-        `<a onmousedown="window.open('https://github.com/lttthedev/lttthedev.github.io','_blank');" win12_title="https://github.com/lttthedev/lttthedev.github.io" onmouseenter="showdescp(event)" onmouseleave="hidedescp(event)"><i class="bi bi-github"></i> View this project in Github</a>`,
+        `<a onmousedown="window.open('https://github.com/Mayank10123/win-12','_blank');" win12_title="https://github.com/Mayank10123/win-12" onmouseenter="showdescp(event)" onmouseleave="hidedescp(event)"><i class="bi bi-github"></i> View this project in Github</a>`,
         function (arg) {
             if (edit_mode) {
                 return ['<i class="bi bi-pencil"></i> Exit edit mode', 'editMode();'];
@@ -157,7 +157,7 @@ let cms = {
     ],
     'smlapp': [
         function (arg) {
-            return ['<i class="bi bi-window"></i> 打开', `openapp('${arg[0]}');hide_startmenu();`];
+            return ['<i class="bi bi-window"></i> Open', `openapp('${arg[0]}');hide_startmenu();`];
         },
         function (arg) {
             return ['<i class="bi bi-link-45deg"></i> Create link on desktop', "var s=`<div class='b' ondblclick=openapp('" + arg[0] + "')  ontouchstart=openapp('" + arg[0] + "') appname='" + arg[0] + "'><img src='icon/" + geticon(arg[0]) + "'><p>" + arg[1] + "</p></div>`;$('#desktop').append(s);desktopItem[desktopItem.length]=s;addMenu();saveDesktop();"];
@@ -174,7 +174,7 @@ let cms = {
     ],
     'explorer.folder': [
         arg => {
-            return ['<i class="bi bi-folder2-open"></i> 打开', `apps.explorer.goto('${arg}')`];
+            return ['<i class="bi bi-folder2-open"></i> Open', `apps.explorer.goto('${arg}')`];
         },
         arg => {
             return ['<i class="bi bi-arrow-up-right-square"></i> Open in new tab', `apps.explorer.newtab('${arg}');`];
@@ -266,8 +266,8 @@ let cms = {
     ]
 }
 window.onkeydown = function (event) {
-    if (event.keyCode == 116/*F5被按下(刷新)*/) {
-        event.preventDefault();/*取消默认刷新行为*/
+    if (event.keyCode == 116/* F5 pressed (refresh) */) {
+        event.preventDefault();/* Cancel default refresh behavior */
         $('#desktop').css('opacity', '0'); setTimeout(() => { $('#desktop').css('opacity', '1'); }, 100); setIcon();
     }
 }
@@ -295,9 +295,9 @@ function showcm(e, cl, arg) {
             $('#cm>list')[0].innerHTML = h;
             $('#cm').addClass('show-begin');
             $('#cm>.foc').focus();
-            // 这个.foc是用来模拟焦点的，这句是将焦点放在右键菜单上，注释掉后果不堪设想 >u-)o
-            // 噢 可是如果设置焦点的话在移动设备上会显示虚拟键盘啊 QAQ (By: User782Tec)
-            // (By: tjy-gitnub)
+            // This .foc simulates focus on the context menu. Do not remove.
+            // On mobile devices setting focus may show virtual keyboard (By: Mayank)
+            // (By: Mayank)
             setTimeout(() => {
                 $('#cm').addClass('show');
             }, 0);
@@ -353,7 +353,7 @@ $('#cm>.foc').blur(() => {
 });
 let font_window = false;
 
-// 下拉菜单
+// Dropdown menu
 dps = {
     'notepad.file': [
         ['<i class="bi bi-file-earmark-plus"></i> New', `hidedp(true);$('#win-notepad>.text-box').addClass('down');
@@ -449,7 +449,7 @@ function hidedp(force = false) {
         }, 200);
     }, 100);
 }
-// 悬停提示
+// Hover tooltip
 document.querySelectorAll('*[win12_title]:not(.notip)').forEach(a => {
     a.addEventListener('mouseenter', showdescp);
     a.addEventListener('mouseleave', hidedescp);
@@ -484,7 +484,7 @@ function hidedescp(e) {
     }, 100);
 }
 
-// 提示
+// Alert
 let nts = {
     'about': {
         cnt: `<p class="tit">Windows 12 Web version</p>
@@ -505,7 +505,7 @@ let nts = {
         cnt: `<p class="tit">Feedback</p>
             <p>We attach great importance to user experience and feedback</p>
             <list class="new">
-                <a class="a" onclick="window.open('https://github.com/lttthedev/lttthedev.github.io/issues','_blank');" win12_title="Open link in new browser window" onmouseenter="showdescp(event)" onmouseleave="hidedescp(event)">Submit an issue on github (a github account is required and will receive higher attention)</a>
+                <a class="a" onclick="window.open('https://github.com/Mayank10123/win-12/issues','_blank');" win12_title="Open link in new browser window" onmouseenter="showdescp(event)" onmouseleave="hidedescp(event)">Submit an issue on github (a github account is required and will receive higher attention)</a>
                 <a class="a" onclick="window.open('https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAO__SDw7SZURjUzOUo0VEVXU1pMWlFTSUVGWDNYWU1EWS4u','_blank');" win12_title="Open link in new browser window" onmouseenter="showdescp(event)" onmouseleave="hidedescp(event)">Send feedback on Microsoft Forms (no account required, will be taken seriously)</a>
             </list>`,
         btn: [
@@ -524,8 +524,8 @@ let nts = {
             { type: 'cancel', text: 'Cancel', js: 'closenotice();' }
         ]
     },
-    'ZeroDivision': {//计算器报错窗口
-        // 甚至还报错我真的哭死，直接输入框显示给error啥的不就完了。。
+    'ZeroDivision': {// Calculator error window
+        // Just show error in the input field
         cnt: `<p class="tit">Wrong</p>
             <p>The divisor must not be equal to 0</p>`,
         btn: [
@@ -592,7 +592,7 @@ let nts = {
         cnt: `<p class="tit">Feedback Windows 12 Copilot</p>
         <p>We attach great importance to user experience and feedback, and we are very grateful for your suggestions on AI Copilot</p>
         <list class="new">
-            <a class="a" onclick="window.open('https://github.com/lttthedev/lttthedev.github.io/issues','_blank');" win12_title="Open link in new browser window" onmouseenter ="showdescp(event)" onmouseleave="hidedescp(event)">Submit an issue on github (a github account is required and will receive higher attention)</a>
+            <a class="a" onclick="window.open('https://github.com/Mayank10123/win-12/issues','_blank');" win12_title="Open link in new browser window" onmouseenter ="showdescp(event)" onmouseleave="hidedescp(event)">Submit an issue on github (a github account is required and will receive higher attention)</a>
             " Open the link" onmouseenter="showdescp(event)" onmouseleave="hidedescp(event)">Send feedback on Microsoft Forms (no account required, will be taken seriously)</a>
         </list>
             `,
@@ -637,9 +637,9 @@ function closenotice() {
         $('#notice-back').removeClass('show');
     }, 200);
 }
-var shutdown_task = []; //关机任务，储存在这个数组里
-// 为什么要数组？
-// 运行的指令
+var shutdown_task = []; // Shutdown tasks stored in this array
+// Why an array?
+// Commands to run
 function runcmd(cmd) {
     if (cmd.slice(0, 3) == "cmd") {
         run_cmd = cmd;
@@ -654,10 +654,10 @@ function runcmd(cmd) {
         openapp(cmd.replace('.exe', ''))
         return true;
     }
-    else if (cmd.includes("shutdown")) {//关机指令
+    else if (cmd.includes("shutdown")) {// Shutdown command
         run_cmd = cmd
         var cmds = cmd.split(' ');
-        if (cmds.includes("shutdown") || cmds.includes("shutdown.exe")) { //帮助
+        if (cmds.includes("shutdown") || cmds.includes("shutdown.exe")) { // Help
             if (cmds.length == 1) {
                 openapp('terminal');
                 $('#win-terminal').html(`
@@ -667,24 +667,24 @@ shutdown [-s] [-r] [-f] [-a] [-t time]
 -r: restart
 -f: logout
 -a: Cancel previous operation
--t time: Specifies to operate after time seconds作
+-t time: Specifies to operate after time seconds
 
 I won’t introduce much else.
-Please press any key to continue.&nbsp;.&nbsp;.<input type="text" onkeydown="hidewin('terminal')"></input></pre>`); //Q：为什么文字这么多呢？A：shutdown的帮助本来就多，为了能显示空格，就把空格用&nbsp;代替了
-                // 所以你是没事干吗？。。提示：github并不是以行数来计算贡献的哦   from @tjy-gitnub
+Please press any key to continue.&nbsp;.&nbsp;.<input type="text" onkeydown="hidewin('terminal')"></input></pre>`); // Shutdown help text uses &nbsp; for proper spacing display
+                // @Mayank
                 $('#win-terminal>pre>input').focus()
             }
-            else if (cmds.includes("-s") || cmds.includes("/s")) {//关机
-                if ((cmds.indexOf("-t") != -1 && cmd.length/*判断是否-t后有其他参数*/ >= cmds.indexOf("-t") + 2/*先加一，获取当下标是从1开始的时候的下标索引；再加一，获取下一项。配合数组.length使用*/) || (cmds.indexOf("/t") != -1 && cmd.length/*判断是否-t后有其他参数*/ >= cmds.indexOf("/t") + 2)) {
+            else if (cmds.includes("-s") || cmds.includes("/s")) {// Shutdown
+                if ((cmds.indexOf("-t") != -1 && cmd.length/* check if -t has additional params */ >= cmds.indexOf("-t") + 2/* get the next item index */) || (cmds.indexOf("/t") != -1 && cmd.length/* check if -t has additional params */ >= cmds.indexOf("/t") + 2)) {
                     str = "";
                     if (cmds.includes("-t")) { str = "-t"; }
                     if (cmds.includes("/t")) { str = "/t"; }
-                    if (!isNaN(cmds[cmds.indexOf(str) + 1]/*这里只加一是因为下标是从0开始的*/)) {
+                    if (!isNaN(cmds[cmds.indexOf(str) + 1]/* +1 because index is 0-based */)) {
                         num = parseInt(cmds[cmds.indexOf(str) + 1])
                         nts['shutdown'] = {
                             cnt: `
                             <p class="tit">You will be logged out soon</p>
-                            <p>Windows will shut down after ` + calcTimeString(num) + `. </p>`, // 如果必须原生样式的，建议改为 num<60 ? 1 : Math.floor(num / 60) + ` 分钟后关闭。</p>`,
+                            <p>Windows will shut down after ` + calcTimeString(num) + `. </p>`, // Alternative: show minutes remaining
                             btn: [
                                 { type: 'main', text: 'Close', js: 'closenotice();' },
                             ]
@@ -696,8 +696,8 @@ Please press any key to continue.&nbsp;.&nbsp;.<input type="text" onkeydown="hid
                     }
                 }
             }
-            else if (cmds.includes("-r") || cmds.includes("/r")) {//重启
-                if ((cmds.indexOf("-t") != -1 && cmd.length >= cmds.indexOf("-t") + 2) || (cmds.indexOf("/t") != -1 && cmd.length >= cmds.indexOf("/t") + 2)) {/*详见上面的注释*/
+            else if (cmds.includes("-r") || cmds.includes("/r")) {// Restart
+                if ((cmds.indexOf("-t") != -1 && cmd.length >= cmds.indexOf("-t") + 2) || (cmds.indexOf("/t") != -1 && cmd.length >= cmds.indexOf("/t") + 2)) {/* See comments above */
                     str = "";
                     if (cmds.includes("-t")) { str = "-t"; }
                     if (cmds.includes("/t")) { str = "/t"; }
@@ -706,7 +706,7 @@ Please press any key to continue.&nbsp;.&nbsp;.<input type="text" onkeydown="hid
                         nts['shutdown'] = {
                             cnt: `
                             <p class="tit">You will be logged out soon</p>
-                            <p>Windows will shut down after ` + calcTimeString(num) + `. </p>`, // 如果必须原生样式的，建议改为 num<60 ? 1 : Math.floor(num / 60) + ` 分钟后关闭。</p>`,
+                            <p>Windows will shut down after ` + calcTimeString(num) + `. </p>`, // Alternative: show minutes remaining
                             btn: [
                                 { type: 'main', text: 'Close', js: 'closenotice();' },
                             ]
@@ -718,7 +718,7 @@ Please press any key to continue.&nbsp;.&nbsp;.<input type="text" onkeydown="hid
                     }
                 }
             }
-            else if (cmds.includes("-a") || cmds.includes("/a")) {//取消电源操作
+            else if (cmds.includes("-a") || cmds.includes("/a")) {// Cancel power operation
                 if (shutdown_task.length > 0) {
                     for (var i = 0; i < shutdown_task.length; i++) {
                         if (shutdown_task[i] != null) {
@@ -744,7 +744,7 @@ Please press any key to continue.&nbsp;.&nbsp;.<input type="text" onkeydown="hid
     }
     return false;
 }
-// 应用
+// Applications
 let apps = {
     setting: {
         init: () => {
@@ -763,19 +763,19 @@ let apps = {
             $('#set-theme').html(`<loading><svg width="30px" height="30px" viewBox="0 0 16 16">
             <circle cx="8px" cy="8px" r="7px" style="stroke:#7f7f7f50;fill:none;stroke-width:3px;"></circle>
             <circle cx="8px" cy="8px" r="7px" style="stroke:#2983cc;stroke-width:3px;"></circle></svg></loading>`)
-            // 实时获取主题
-            $.get('https://api.github.com/repos/tjy-gitnub/win12-theme/contents').then(cs => {
+            // Fetch themes in real-time
+            $.get('https://api.github.com/repos/Mayank10123/win-12-theme/contents').then(cs => {
                 cs.forEach(c => {
                     if (c.type == 'dir') {
                         $.get(c.url).then(cnt => {
                             $('#set-theme').html('');
                             cnt.forEach(cn => {
                                 if (cn.name == 'theme.json') {
-                                    $.getJSON('https://tjy-gitnub.github.io/win12-theme/' + cn.path).then(inf => {
+                                    $.getJSON('https://mayank10123.github.io/win-12-theme/' + cn.path).then(inf => {
                                         infjs = inf;
                                         if ($('#set-theme>loading').length)
                                             $('#set-theme').html('');
-                                        $('#set-theme').append(`<a class="a act" onclick="apps.setting.theme_set('${c.name}')" style="background-image:url('https://tjy-gitnub.github.io/win12-theme/${c.name}/view.jpg')">${c.name}</a>`);
+                                        $('#set-theme').append(`<a class="a act" onclick="apps.setting.theme_set('${c.name}')" style="background-image:url('https://mayank10123.github.io/win-12-theme/${c.name}/view.jpg')">${c.name}</a>`);
                                     })
                                 }
                             })
@@ -785,20 +785,20 @@ let apps = {
             });
         },
         theme_set: (infp) => {
-            $.get('https://api.github.com/repos/tjy-gitnub/win12-theme/contents/' + infp).then(cnt => {
-                console.log('https://api.github.com/repos/tjy-gitnub/win12-theme/contents/' + infp);
+            $.get('https://api.github.com/repos/Mayank10123/win-12-theme/contents/' + infp).then(cnt => {
+                console.log('https://api.github.com/repos/Mayank10123/win-12-theme/contents/' + infp);
                 cnt.forEach(cn => {
                     if (cn.name == 'theme.json') {
-                        $.getJSON('https://tjy-gitnub.github.io/win12-theme/' + cn.path).then(inf => {
+                        $.getJSON('https://mayank10123.github.io/win-12-theme/' + cn.path).then(inf => {
                             infjs = inf;
                             cnt.forEach(fbg => {
                                 console.log(fbg, infjs);
                                 if (fbg.name == infjs.bg) {
-                                    $(':root').css('--bgul', `url('https://tjy-gitnub.github.io/win12-theme/${fbg.path}')`);
+                                    $(':root').css('--bgul', `url('https://mayank10123.github.io/win-12-theme/${fbg.path}')`);
                                     $(':root').css('--theme-1', infjs.color1);
                                     $(':root').css('--theme-2', infjs.color2);
                                     $(':root').css('--href', infjs.href);
-                                    // $('#set-theme').append(`<a class="a act" onclick="apps.setting.theme_set(\`(${inf})\`)" style="background-image:url('https://tjy-gitnub.github.io/win12-theme/${fbg.path}')">${c.name}</a>`);
+                                    // $('#set-theme').append(`<a class="a act" onclick="apps.setting.theme_set(\`(${inf})\`)" style="background-image:url('https://mayank10123.github.io/win-12-theme/${fbg.path}')">${c.name}</a>`);
                                 }
                             })
                         })
@@ -813,7 +813,7 @@ let apps = {
             $('#win-setting>.page>.cnt.update>.setting-list>.update-now>div>p:first-child')[0].innerText = 'Checking for updates...';
             $('#win-setting>.page>.cnt.update>.setting-list>.update-now>div>p:last-child')[0].innerHTML = '&nbsp;';
             $('#win-setting>.page>.cnt.update>.lo>.update-main>div:last-child').addClass('disabled');
-            fetch('https://api.github.com/repos/tjy-gitnub/win12/commits').then(res => {
+            fetch('https://api.github.com/repos/Mayank10123/win-12/commits').then(res => {
                 res.json().then(json => {
                     const sha = localStorage.getItem('sha');
                     if (sha != json[0].sha) {
@@ -833,7 +833,7 @@ let apps = {
                             window.setTimeout(() => {
                                 let da = new Date();
                                 $('#win-setting>.page>.cnt.update>.lo>.update-main .notice')[0].innerText = 'Windows 12 is currently the latest version';
-                                $('#win-setting>.page>.cnt.update>.lo>.update-main .detail')[0].innerText = `Last check time: ${da.getFullYear()}年${da.getMonth() + 1}月${da.getDate()}日，${da.getHours()}: ${da.getMinutes()}`;
+                                $('#win-setting>.page>.cnt.update>.lo>.update-main .detail')[0].innerText = `Last check time: ${da.getMonth() + 1}/${da.getDate()}/${da.getFullYear()}, ${da.getHours()}:${da.getMinutes()}`;
                                 $('#win-setting>.page>.cnt.update>.lo>.update-main>div:last-child').removeClass('disabled');
                                 $('#win-setting>.page>.cnt.update>.setting-list>.update-now>div>p:first-child')[0].innerText = 'No updates available';
                                 $('#win-setting>.page>.cnt.update>.setting-list>.update-now>div>p:last-child')[0].innerText = 'Windows 12 is currently the latest version';
@@ -846,7 +846,7 @@ let apps = {
     },
     run: {
         init: () => {
-            $('#win-run>.open>input').val(run_cmd);   //在windows中，运行输入的内容会被保留
+            $('#win-run>.open>input').val(run_cmd);   // In Windows, Run dialog preserves input
             window.setTimeout(() => {
                 $('#win-run>.open>input').focus();
                 $('#win-run>.open>input').select();
@@ -1119,8 +1119,8 @@ let apps = {
                 cpusum = Number((cpusum + cpu).toFixed(1));
                 memorysum = Number((memorysum + memory).toFixed(1));
                 disksum = Number((disksum + disk).toFixed(1));
-                if (document.getElementById('tsk-search').value != '' && document.getElementById('tsk-search').style.display == '' && (!elt.name.toLowerCase().includes(document.getElementById('tsk-search').value.toLowerCase()/* 搜索时转换成小写 */))) {
-                    continue //搜索
+                if (document.getElementById('tsk-search').value != '' && document.getElementById('tsk-search').style.display == '' && (!elt.name.toLowerCase().includes(document.getElementById('tsk-search').value.toLowerCase()/* Convert to lowercase for search */))) {
+                    continue // Search
                 }
                 processList.splice(processList.length, 0, {
                     name: elt.name,
@@ -1158,7 +1158,7 @@ let apps = {
             for (const elt of processList) {
                 const newElt = document.createElement('tr');
                 newElt.classList.add('notrans');
-                newElt.innerHTML = `<td><div class="text"><div class="icon" style="background-image: url('${elt.icon ? elt.icon : ''}');"></div>${elt.name}</div></td><td style="text-align: right;background-color: ${page.classList.contains('dark') ? '#193662' : '#7ec6ec'}${elt.cpu >= (max / 1.3) ? 'ff' : 'aa'};">${elt.cpu.toFixed(1)}%</td><td style="text-align: right;background-color: ${page.classList.contains('dark') ? '#193662' : '#7ec6ec'}${elt.memory >= (max / 1.3) ? 'ff' : 'aa'};">${elt.memory.toFixed(1)}%</td><td style="text-align: right;background-color: ${page.classList.contains('dark') ? '#193662' : '#7ec6ec'}${elt.disk >= (max / 1.3) ? 'ff' : 'aa'};">${elt.disk.toFixed(1)}%</td><td>${['非常低', '非常低', '非常低', '低', '中'][Math.floor(Math.random() * 5)]}</td>`;
+                newElt.innerHTML = `<td><div class="text"><div class="icon" style="background-image: url('${elt.icon ? elt.icon : ''}');"></div>${elt.name}</div></td><td style="text-align: right;background-color: ${page.classList.contains('dark') ? '#193662' : '#7ec6ec'}${elt.cpu >= (max / 1.3) ? 'ff' : 'aa'};">${elt.cpu.toFixed(1)}%</td><td style="text-align: right;background-color: ${page.classList.contains('dark') ? '#193662' : '#7ec6ec'}${elt.memory >= (max / 1.3) ? 'ff' : 'aa'};">${elt.memory.toFixed(1)}%</td><td style="text-align: right;background-color: ${page.classList.contains('dark') ? '#193662' : '#7ec6ec'}${elt.disk >= (max / 1.3) ? 'ff' : 'aa'};">${elt.disk.toFixed(1)}%</td><td>${['Very Low', 'Very Low', 'Very Low', 'Low', 'Medium'][Math.floor(Math.random() * 5)]}</td>`;
                 if (elt.name == selected) {
                     newElt.classList.add('select');
                 }
@@ -1214,9 +1214,9 @@ let apps = {
             apps.taskmgr.diskSpeed.read = apps.taskmgr.disk != 0 ? (Math.random() * 100).toFixed(2) : 0;
             apps.taskmgr.diskSpeed.write = apps.taskmgr.disk != 0 ? (Math.random() * 100).toFixed(2) : 0;
             $('#win-taskmgr>.main>.cnt.performance>.content>.performance-graph>.graph-disk>.information>.left>div:nth-child(1)>.value')[0].innerText = `${apps.taskmgr.disk}%`;
-            $('#win-taskmgr>.main>.cnt.performance>.content>.performance-graph>.graph-disk>.information>.left>div:nth-child(2)>.value')[0].innerText = `${apps.taskmgr.disk != 0 ? Math.random().toFixed(2) : 0} 毫秒`;
-            $('#win-taskmgr>.main>.cnt.performance>.content>.performance-graph>.graph-disk>.information>.left>div:nth-child(3)>.value')[0].innerText = `${apps.taskmgr.diskSpeed.read} ${apps.taskmgr.disk != 0 ? 'MB/秒' : 'KB/秒'}`;
-            $('#win-taskmgr>.main>.cnt.performance>.content>.performance-graph>.graph-disk>.information>.left>div:nth-child(4)>.value')[0].innerText = `${apps.taskmgr.diskSpeed.write} ${apps.taskmgr.disk != 0 ? 'MB/秒' : 'KB/秒'}`;
+            $('#win-taskmgr>.main>.cnt.performance>.content>.performance-graph>.graph-disk>.information>.left>div:nth-child(2)>.value')[0].innerText = `${apps.taskmgr.disk != 0 ? Math.random().toFixed(2) : 0} ms`;
+            $('#win-taskmgr>.main>.cnt.performance>.content>.performance-graph>.graph-disk>.information>.left>div:nth-child(3)>.value')[0].innerText = `${apps.taskmgr.diskSpeed.read} ${apps.taskmgr.disk != 0 ? 'MB/s' : 'KB/s'}`;
+            $('#win-taskmgr>.main>.cnt.performance>.content>.performance-graph>.graph-disk>.information>.left>div:nth-child(4)>.value')[0].innerText = `${apps.taskmgr.diskSpeed.write} ${apps.taskmgr.disk != 0 ? 'MB/s' : 'KB/s'}`;
             $('#win-taskmgr>.main>.cnt.performance>.content>.select-menu>.graph-disk>.right>.data>.value2')[0].innerText = `${apps.taskmgr.disk}%`;
 
             $('#win-taskmgr>.main>.cnt.performance>.content>.select-menu>.graph-gpu>.right>.data>.value2')[0].innerText = `${apps.taskmgr.gpu.usage.toFixed(1)}%`;
@@ -1231,7 +1231,7 @@ let apps = {
             apps.taskmgr.wifi[1] = Number((Math.random() * 100).toFixed(2));
             $('#win-taskmgr>.main>.cnt.performance>.content>.performance-graph>.graph-wifi>.information>.left>div:nth-child(1)>.value')[0].innerText = `${apps.taskmgr.wifi[1].toFixed(2)} Mbps`;
             $('#win-taskmgr>.main>.cnt.performance>.content>.performance-graph>.graph-wifi>.information>.left>div:nth-child(2)>.value')[0].innerText = `${apps.taskmgr.wifi[0].toFixed(2)} Mbps`;
-            $('#win-taskmgr>.main>.cnt.performance>.content>.select-menu>.graph-wifi>.right>.data>.value2')[0].innerText = `发送: ${apps.taskmgr.wifi[1]} 接收: ${apps.taskmgr.wifi[0]} Mbps`;
+            $('#win-taskmgr>.main>.cnt.performance>.content>.select-menu>.graph-wifi>.right>.data>.value2')[0].innerText = `Sent: ${apps.taskmgr.wifi[1]} Received: ${apps.taskmgr.wifi[0]} Mbps`;
         },
         graphLoad: () => {
             $('#win-taskmgr>.main>.cnt.performance>.content>.select-menu>*>.left>.graph-view-cpu')[0].style.backgroundImage = `url("${apps.taskmgr.drawgraph(apps.taskmgr.cpuCtx, 'cpuLastPos', apps.taskmgr.cpu)}")`;
@@ -1241,39 +1241,39 @@ let apps = {
             apps.taskmgr.memoryCtx2.clearRect(0, 0, w, h);
             apps.taskmgr.memoryCtx2.fillRect(0, 0, w / 100 * apps.taskmgr.memory, h);
             $('#win-taskmgr>.main>.cnt.performance>.content>.select-menu>*>.left>.graph-view-disk')[0].style.backgroundImage = `url("${apps.taskmgr.drawgraph(apps.taskmgr.diskCtx, 'diskLastPos', apps.taskmgr.disk)}")`;
-            // 绘制磁盘传输速率
+            // Draw disk transfer rate
             w = apps.taskmgr.diskCanvas2.width;
             h = apps.taskmgr.diskCanvas2.height;
             data = apps.taskmgr.diskCtx2.getImageData(w / 60, 0, w - w / 60, h);
             apps.taskmgr.diskCtx2.clearRect(0, 0, w, h);
             apps.taskmgr.diskCtx2.putImageData(data, 0, 0);
-            // 读取速度
+            // Read speed
             apps.taskmgr.diskCtx2.fillStyle = '#00800022';
             apps.taskmgr.diskCtx2.setLineDash([]);
             apps.taskmgr.drawgraph(apps.taskmgr.diskCtx2, apps.taskmgr.diskLastPos2.read, apps.taskmgr.diskSpeed.read, false, false);
             apps.taskmgr.diskLastPos2.read = [w - w / 60, h / 100 * (100 - apps.taskmgr.diskSpeed.read)];
-            // 写入速度
+            // Write speed
             apps.taskmgr.diskCtx2.fillStyle = '#00000000';
             apps.taskmgr.diskCtx2.setLineDash([4, 4]);
             apps.taskmgr.drawgraph(apps.taskmgr.diskCtx2, apps.taskmgr.diskLastPos2.write, apps.taskmgr.diskSpeed.write, false, false);
             apps.taskmgr.diskLastPos2.write = [w - w / 60, h / 100 * (100 - apps.taskmgr.diskSpeed.write)];
-            // 绘制网络
+            // Draw network
             w = apps.taskmgr.wifiCanvas.width;
             h = apps.taskmgr.wifiCanvas.height;
             data = apps.taskmgr.wifiCtx.getImageData(w / 60, 0, w - w / 60, h);
             apps.taskmgr.wifiCtx.clearRect(0, 0, w, h);
             apps.taskmgr.wifiCtx.putImageData(data, 0, 0);
-            // 接收
+            // Receive
             apps.taskmgr.wifiCtx.fillStyle = '#8e582922';
             apps.taskmgr.wifiCtx.setLineDash([]);
             apps.taskmgr.drawgraph(apps.taskmgr.wifiCtx, apps.taskmgr.wifiLastPos[0], apps.taskmgr.wifi[0], false, false);
             apps.taskmgr.wifiLastPos[0] = [w - w / 60, h / 100 * (100 - apps.taskmgr.wifi[0])];
-            // 发送
+            // Send
             apps.taskmgr.wifiCtx.fillStyle = '#8e582900';
             apps.taskmgr.wifiCtx.setLineDash([4, 4]);
             $('#win-taskmgr>.main>.cnt.performance>.content>.select-menu>*>.left>.graph-view-wifi')[0].style.backgroundImage = `url("${apps.taskmgr.drawgraph(apps.taskmgr.wifiCtx, apps.taskmgr.wifiLastPos[1], apps.taskmgr.wifi[1], false, false)}")`;
             apps.taskmgr.wifiLastPos[1] = [w - w / 60, h / 100 * (100 - apps.taskmgr.wifi[1])];
-            // 绘制显卡
+            // Draw GPU
             for (var i = 0; i < 4; i++) {
                 w = apps.taskmgr.gpuCanvas[i].width;
                 h = apps.taskmgr.gpuCanvas[i].height;
@@ -1495,7 +1495,7 @@ let apps = {
         }
     },
     webapps: {
-        apps: ['vscode', 'bilibili'],
+        apps: ['vscode', 'ubuntuvm'],
         init: () => {
             for (const app of apps.webapps.apps) {
                 apps[app].load();
@@ -1510,12 +1510,12 @@ let apps = {
             $('#win-vscode')[0].insertAdjacentHTML('afterbegin', '<iframe src="https://github1s.com/" frameborder="0" style="width: 100%; height: 100%;" loading="lazy"></iframe>')
         }
     },
-    bilibili: {
+    ubuntuvm: {
         init: () => {
             return null;
         },
         load: () => {
-            $('#win-bilibili')[0].insertAdjacentHTML('afterbegin', '<iframe src="https://bilibili.com/" frameborder="0" style="width: 100%; height: 100%;" loading="lazy"></iframe>')
+            $('#win-ubuntuvm')[0].insertAdjacentHTML('afterbegin', '<iframe src="https://portfolio-main-3jnu.onrender.com/" frameborder="0" style="width: 100%; height: 100%;" loading="lazy"></iframe>')
         }
     },
     defender: {
@@ -1601,8 +1601,8 @@ let apps = {
             apps.explorer.newtab();
             // apps.explorer.reset();
             apps.explorer.Process_Of_Select = "";
-            apps.explorer.is_use = 0;//千万不要删除它，它依托bug运行
-            apps.explorer.is_use2 = 0;//千万不要删除它，它依托bug运行
+            apps.explorer.is_use = 0;// Do not delete this, it relies on a bug to work
+            apps.explorer.is_use2 = 0;// Do not delete this, it relies on a bug to work
             apps.explorer.old_name = "";
             apps.explorer.clipboard = null;
             document.addEventListener('keydown', function (event) {
@@ -1657,10 +1657,10 @@ let apps = {
             <a class="a item act" ondblclick="apps.explorer.goto('C:')" ontouchend="apps.explorer.goto('C:')" oncontextmenu="showcm(event,'explorer.folder','C:');return stop(event);">
             <img src="apps/icons/explorer/diskwin.svg"><div><p class="name">Local Disk (C:)</p>
             <div class="bar"><div class="content" style="width: 88%;"></div>
-            </div><p class="info">32.6 GB 可用, 共 143 GB</p></div></a><a class="a item act" ondblclick="apps.explorer.goto('D:')" ontouchend="apps.explorer.goto('D:')"
+            </div><p class="info">32.6 GB available, 143 GB total</p></div></a><a class="a item act" ondblclick="apps.explorer.goto('D:')" ontouchend="apps.explorer.goto('D:')"
             oncontextmenu="showcm(event,'explorer.folder','D:');return stop(event);">
             <img src="apps/icons/explorer/disk.svg"><div><p class="name">Local Disk (D:)</p><div class="bar"><div class="content" style="width: 15%;"></div>
-            </div><p class="info">185.3 GB 可用, 共 216 GB</p></div></a></div>`;
+            </div><p class="info">185.3 GB available, 216 GB total</p></div></a></div>`;
             $('#win-explorer>.path>.tit')[0].innerHTML = '<div class="icon" style="background-image: url(\'./apps/icons/explorer/thispc.svg\')"></div><div class="path"><div class="text" onclick="apps.explorer.reset()">This</div><div class="arrow">&gt;</div></div>';
             // if(rename){
             m_tab.rename('explorer', '<img src="./apps/icons/explorer/thispc.svg"> This PC');
@@ -1681,7 +1681,7 @@ let apps = {
             element.classList.add('select');
             apps.explorer.is_use += 1;
         },
-        copy_or_cut: (path, operate) => { //operate只能为copy或cut
+        copy_or_cut: (path, operate) => { // operate can only be copy or cut
             var pathl = path.split('/');
             var name = pathl[pathl.length - 1];
             pathl.pop();
@@ -1735,13 +1735,13 @@ let apps = {
             }
             if (apps.explorer.traverseDirectory(tmp, clipboard[1][0]))
                 // {
-                //     clipboard[1][0] += " - 副本";
+                //     clipboard[1][0] += " - Copy";
                 // }
                 // if (apps.explorer.traverseDirectory(tmp,clipboard[1]['name']))
                 // {
-                //     clipboard[1][0] += " - 副本";
+                //     clipboard[1][0] += " - Copy";
                 // }
-                // 这段注释了的代码可以调试一下，会有神奇的bug。
+                // This commented code can be debugged, it has magical bugs.
 
                 if (clipboard[0] == "file") {
                     tmp["file"].push(clipboard[1]);
@@ -1789,7 +1789,7 @@ let apps = {
                 else {
                     icon_ = "icon/files/none.png";
                 }
-                //这边可以适配更多的文件类型
+                // More file types can be added here
 
                 aTag.innerHTML += inputTag.value;
                 for (var i = 0; i < tmp["file"].length; i++) {
@@ -1889,7 +1889,7 @@ let apps = {
 
             // $('#win-explorer>.path>.tit')[0].innerHTML = path;
         },
-        add: (path, name_, type = "file", command = "", icon = "") => { //type为文件类型，只有文件夹files和文件file
+        add: (path, name_, type = "file", command = "", icon = "") => { // type is file type, only folder "files" or file "file"
             var pathl = path.split('/');
             var icon_ = "";
             let tmp = apps.explorer.path;
@@ -1917,7 +1917,7 @@ let apps = {
                 else {
                     icon_ = "icon/files/none.png";
                 }
-                //这边可以适配更多的文件类型
+                // More file types can be added here
                 if (icon != "") {
                     icon_ = icon;
                 }
@@ -1964,7 +1964,7 @@ let apps = {
                 }
             });
         },
-        get_file_id: (name) => {  //只能找到已经打开了的文件夹的元素id
+        get_file_id: (name) => {  // Can only find the element id of already opened folders
             var elements = document.getElementsByClassName("item");
             for (var i = 0; i < elements.length; i++) {
                 var element = elements[i];
@@ -2012,7 +2012,7 @@ let apps = {
             }
             return false;
         },
-        // 禁止奇奇怪怪的缩进！尽量压行，不要毫无意义地全部格式化和展开！ // f*ck!这™的格式化工具，我*********
+        // Do not use weird indentation! Keep lines compact. Do not format everything meaninglessly!
         path: {
             folder: {
                 'C:': {
@@ -2046,7 +2046,7 @@ let apps = {
                                     folder: {}, file: [
                                         { name: 'calc.exe', ico: 'icon/calc.svg', command: "openapp('calc')" },
                                         { name: 'cmd.exe', ico: 'icon/terminal.svg', command: "openapp('terminal')" },
-                                        { name: 'notepad.exe', ico: 'icon/notepad.svg', command: "openapp('notepad')" },//system32也有一个notepad
+                                        { name: 'notepad.exe', ico: 'icon/notepad.svg', command: "openapp('notepad')" },//system32 also has a notepad
                                         { name: 'taskmgr.exe', ico: 'icon/taskmgr.png', command: "openapp('taskmgr')" },
                                         { name: 'winver.exe', ico: 'icon/about.svg', command: "openapp('winver')" },
                                     ]
@@ -2058,17 +2058,17 @@ let apps = {
                                 { name: 'py.exe', ico: 'icon/python.png', command: "openapp('python')" },
                             ]
                         },
-                        '用户': {
+                        'Users': {
                             folder: {
                                 'Administrator': {
                                     folder: {
-                                        '文档': {
+                                        'Documents': {
                                             folder: { 'IISExpress': { folder: {}, file: [] }, 'PowerToys': { folder: {}, file: [] } },
                                             file: [
                                                 { name: 'Introduction.doc', ico: 'icon/files/word.png', command: '' },
                                                 { name: 'Vercap.xlsx', ico: 'icon/files/excel.png', command: '' },
                                             ]
-                                        }, '图片': {
+                                        }, 'Pictures': {
                                             folder: { 'Local Photo': { folder: {}, file: [] }, 'Screenshots': { folder: {}, file: [] } },
                                             file: [
                                                 { name: 'StructureDiagram.png', ico: 'icon/files/img.png', command: '' },
@@ -2140,15 +2140,15 @@ let apps = {
                                             folder: { 'Local photo': { folder: {}, file: [] }, 'Screenshots': { folder: {}, file: [] } },
                                             file: []
                                         },
-                                        'Public m': { folder: { '录音机': { folder: {}, file: [] } } }
+                                        'Public m': { folder: { 'Sound Recorder': { folder: {}, file: [] } } }
                                     }}}}},
                     file: []
                 },
                 'D:': {
                     folder: { 'Microsoft': { folder: {}, file: [] } },
                     file: [
-                        { name: '瓶盖结构说明.docx', ico: 'icon/files/word.png', command: '' },
-                        { name: '可口可乐瓶盖历史.pptx', ico: 'icon/files/ppt.png', command: '' },
+                        { name: 'Bottle Cap Structure.docx', ico: 'icon/files/word.png', command: '' },
+                        { name: 'Coca-Cola Cap History.pptx', ico: 'icon/files/ppt.png', command: '' },
                     ]}}},
 
         history: [],
@@ -2224,8 +2224,8 @@ let apps = {
         },
         get: () => {
             apps.about.run_loading('#contri');
-            // 实时获取项目贡献者
-            $.get('https://api.github.com/repos/tjy-gitnub/win12/contributors').then(cs => {
+            // Fetch project contributors in real time
+            $.get('https://api.github.com/repos/Mayank10123/win-12/contributors').then(cs => {
                 setTimeout(() => {
                     $('#contri').html('');
                     cs.forEach(c => {
@@ -2237,7 +2237,7 @@ let apps = {
         },
         get_star: () => {
             apps.about.run_loading('#StarShow')
-            const repoFullName = 'tjy-gitnub/win12';
+            const repoFullName = 'Mayank10123/win-12';
             fetch(`https://api.github.com/repos/${repoFullName}`)
                 .then(response => response.json())
                 .then(data => {
@@ -2301,18 +2301,18 @@ let apps = {
     },
     notepadFonts: {
         sizes: {
-            '初号': '56',
-            '小初': '48',
-            '一号': '34.7',
-            '小一': '32',
-            '二号': '29.3',
-            '小二': '24',
-            '三号': '21.3',
-            '小三': '20',
-            '四号': '18.7',
-            '小四': '16',
-            '五号': '14',
-            '小五': '12'
+            'ChuHao': '56',
+            'XiaoChu': '48',
+            'Size1': '34.7',
+            'Small1': '32',
+            'Size2': '29.3',
+            'Small2': '24',
+            'Size3': '21.3',
+            'Small3': '20',
+            'Size4': '18.7',
+            'Small4': '16',
+            'Size5': '14',
+            'Small5': '12'
         },
         styles: {
             'Normal': '',
@@ -2486,7 +2486,7 @@ Type "help", "copyright", "credits" or "license" for more information.
                     }
                     input.val('');
 
-                    // 自动聚焦
+                    // Auto focus
                     input.blur();
                     input.focus();
 
@@ -2498,7 +2498,7 @@ Type "help", "copyright", "credits" or "license" for more information.
     terminal: {
         init: () => {
             $('#win-terminal').html(`<pre>
-Microsoft Windows [版本 12.0.39035.7324]
+Microsoft Windows [Version 12.0.39035.7324]
 (c) Microsoft Corporation. All rights reserved.
         </pre>
         <pre class="text-cmd"></pre>
@@ -2525,7 +2525,7 @@ Microsoft Windows [版本 12.0.39035.7324]
                 }
                 input.val('');
     
-                // 自动聚焦
+                // Auto focus
                 input.blur();
                 input.focus();
             }
@@ -2644,11 +2644,11 @@ Microsoft Windows [版本 12.0.39035.7324]
             var divx2 = div.offsetLeft + div.offsetWidth;
             var divy2 = div.offsetTop + div.offsetHeight;
             if (x < divx1 || x > divx2 || y < divy1 || y > divy2) {
-                //如果离开，则执行。。 
+                // If leaving, execute.. 
                 return false;
             }
             else {
-                //如检播到，则执行。。 
+                // If detected, execute.. 
                 return true;
             }
         },
@@ -2707,11 +2707,11 @@ Microsoft Windows [版本 12.0.39035.7324]
             else {
                 // 6
                 if (!/^(((ht|f)tps?):\/\/)?([^!@#$%^&*?.\s-]([^!@#$%^&*?.\s]{0,63}[^!@#$%^&*?.\s])?\.)+[a-z]{2,6}\/?/.test(u) && !u.match(/^mainpage.html$/)) {
-                    // 启用必应搜索
+                    // Enable Bing search
                     $('#win-edge>iframe.show').attr('src', 'https://bing.com/search?q=' + encodeURIComponent(u));
                     m_tab.rename('edge', u);
                 }
-                // 检测网址是否带有http头
+                // Check if URL has http prefix
                 else if (!/^https?:\/\//.test(u) && !u.match(/^mainpage.html$/)) {
                     $('#win-edge>iframe.show').attr('src', 'http://' + u);
                     m_tab.rename('edge', 'http://' + u);
@@ -2803,7 +2803,7 @@ Microsoft Windows [版本 12.0.39035.7324]
     }
 }
 
-// 小组件
+// Widgets
 let widgets = {
     widgets: {
         add: (arg) => {
@@ -2970,7 +2970,7 @@ function widgetsMove(elt, e) {
             }
             elt.style.left = `${left}px`;
             elt.style.top = `${top}px`;
-            // 基于人脑计算qwq
+            // Based on brain calculation qwq
             gridnow = {
                 col: ((width / 2 + elt.getBoundingClientRect().right - 20) / ((gridcolmax * 83 + 10 * (gridcolmax - 1)) / gridcolmax) - gridcol + (gridcol - 2) * 0.5).toFixed(0),
                 row: ((height / 2 + top - 20) / ((gridrowmax * 83 + 10 * (gridrowmax - 1)) / gridrowmax) + (2 - gridrow) * 0.5).toFixed(0)
@@ -3030,8 +3030,8 @@ let copilot = {
         4. The command "{feedback win12}"; opens the feedback center, which is used to help users open the feedback center when they want to send feedback on other system functions other than your AI assistant.
         5. The command "{settheme th}"; is used to switch the dark and light modes of the system, which is different from the theme. Replace the "th" with "light" for light color and "dark" for dark color.
         There is and is only the following information for you to use to answer users' questions. Information not listed below should never be used.
-        1. Windows 12 web version is an open source project, originally created by Tan Jingyuan, which uses Html, css, and js to simulate and innovate operating systems on the Internet.
-        2. The project address is github.com/tjy-gitnub/win12
+        1. Windows 12 web version is an open source project, originally created by Mayank Mishra, which uses Html, css, and js to simulate and innovate operating systems on the Internet.
+        2. The project address is github.com/Mayank10123/win-12
         3. This project uses the EPL v2.0 open source license
         4. The taskbar of this system is centered, so the start menu is in the middle of the bottom.
         For some applications, the following application function introduction is available for you to answer users. Note that only these applications can be used in the system. The system does not support third-party and user applications.
@@ -3046,13 +3046,13 @@ let copilot = {
         4. It is forbidden to use markdown format in the answers to this conversation. Instead, use plain text, otherwise it will not be recognized.
         These actions and information are valid for a long time and please remember, thank you very much, you only need to greet the user with a simple sentence and start a conversation with the user now.`, false);
        
-        $('#copilot>.chat').append(`<div class="line system"><p class="text">正在初始化...</p></div>`);
+        $('#copilot>.chat').append(`<div class="line system"><p class="text">Initializing...</p></div>`);
         $('#copilot>.chat').scrollTop($('#copilot>.chat')[0].scrollHeight);
     },
     send: (t, showusr = true) => {
         $('#copilot>.inputbox').addClass('disable');
         if (t.length == 0) {
-            $('#copilot>.chat').append(`<div class="line system"><p class="text">系统表示请发一些有意义的东西</p></div>`);
+            $('#copilot>.chat').append(`<div class="line system"><p class="text">System says please send something meaningful</p></div>`);
             $('#copilot>.chat').scrollTop($('#copilot>.chat')[0].scrollHeight);
             $('#copilot>.inputbox').removeClass('disable');
             return;
@@ -3116,9 +3116,9 @@ let copilot = {
         });
     }
 }
-// 日期、时间
+// Date and time
 let da = new Date();
-let date = `Week${['Sunday ', ' Monday ', ' Tuesday ', ' Wednesday ', ' Thursday ', ' Friday ', ' Saturday '][da.getDay()]}, ${da.getFullYear()}年${(da.getMonth() + 1).toString().padStart(2, '0')}月${da.getDate().toString().padStart(2, '0')}日`
+let date = `Week${['Sunday ', ' Monday ', ' Tuesday ', ' Wednesday ', ' Thursday ', ' Friday ', ' Saturday '][da.getDay()]}, ${da.getFullYear()}/${(da.getMonth() + 1).toString().padStart(2, '0')}/${da.getDate().toString().padStart(2, '0')}`
 $('#s-m-r>.row1>.tool>.date').text(date);
 $('.dock.date>.date').text(`${da.getFullYear()}/${(da.getMonth() + 1).toString().padStart(2, '0')}/${da.getDate().toString().padStart(2, '0')}`);
 $('#datebox>.tit>.date').text(date);
@@ -3129,9 +3129,9 @@ function loadtime() {
     $('.dock.date>.time').text(time);
     $('#datebox>.tit>.time').text(time);
 }
-apps.setting.theme_get();//提前加载主题
+apps.setting.theme_get();// Pre-load theme
 loadtime();
-setTimeout('loadtime();setInterval(loadtime, 1000);', 1000 - da.getMilliseconds());//修复时间不精准的问题。以前的误差：0-999毫秒；现在：几乎没有
+setTimeout('loadtime();setInterval(loadtime, 1000);', 1000 - da.getMilliseconds());// Fix time accuracy issue. Previous error: 0-999ms; Now: almost none
 let d = new Date();
 let today = new Date().getDate();
 let start = 7 - ((d.getDate() - d.getDay()) % 7) + 1;
@@ -3151,7 +3151,7 @@ function pinapp(id, name, command) {
     $('#s-m-r>.pinned>.apps').append(`<a class='a sm-app enable ${id}' onclick='${command}';hide_startmenu();' oncontextmenu='return showcm(event,\"smapp\",[\"${id}\",\"${name}\"])'><img src='icon/${geticon(id)}'><p>${name}</p></a>`)
 }
 let icon = {
-    bilibili: 'bilibili.png',
+    ubuntuvm: 'ubuntu.svg',
     vscode: 'vscode.png',
     // python: 'python.png',
     winver: 'about.svg',
@@ -3164,7 +3164,7 @@ function geticon(name) {
     else return name + '.svg';
 }
 
-// 应用与窗口
+// Apps and windows
 function openapp(name) {
     if (taskmgrTasks.findIndex(elt => elt.link == name) > -1 && apps.taskmgr.tasks.findIndex(elt => elt.link == name) == -1) {
         apps.taskmgr.tasks.splice(apps.taskmgr.tasks.length, 0, taskmgrTasks.find(elt => elt.link == name));
@@ -3205,7 +3205,7 @@ function openapp(name) {
         $('.window.' + name).removeClass('load');
     }, 500);
 }
-// 窗口操作
+// Window operations
 function showwin(name) {
     $('.window.' + name).addClass('show-begin');
     setTimeout(() => { $('.window.' + name).addClass('show'); }, 0);
@@ -3479,13 +3479,13 @@ function orderwindow() {
     for (let i = 0; i < wo.length; i++) {
         const win = $('.window.' + wo[wo.length - i - 1]);
         if (topmost.includes(wo[wo.length - i - 1])) {
-            win.css('z-index', 10 + i + 50/*这里的50可以改，不要太大，不然会覆盖任务栏；不要太小，不然就和普通窗口没有什么区别了。随着版本的更新，肯定会有更多窗口，以后就可以把数字改打一点点*/);
+            win.css('z-index', 10 + i + 50/*This 50 can be changed, not too large to cover taskbar, not too small or it is like normal windows*/);
         } else {
             win.css('z-index', 10 + i);
         }
     }
 }
-// 以下函数基于bug运行，切勿改动！
+// The following functions rely on bugs, do not modify!
 function focwin(name, arg = 'window') {
     // if(wo[0]==name)return;
     if (arg == 'window') {
@@ -3501,7 +3501,7 @@ function focwin(name, arg = 'window') {
 function taskbarclick(name) {
     if ($('.window.' + name).hasClass('foc')) {
         minwin(name);
-        // focwin(null); // 禁改
+        // focwin(null); // Do not modify
         return;
     }
     if ($('.window.' + name).hasClass('min')) {
@@ -3509,7 +3509,7 @@ function taskbarclick(name) {
     }
     focwin(name);
 }
-// 菜单隐藏
+// Menu hide
 function hide_startmenu() {
     $('#start-menu').removeClass('show');
     $('#start-btn').removeClass('show');
@@ -3535,7 +3535,7 @@ function controlStatus(name) {
         }
     }
 }
-// 控制面板 亮度调整
+// Control panel brightness adjustment
 function dragBrightness(e) {
     const container = $('#control>.cont>.bottom>.brightness>.range-container')[0];
     const after = $("#control>.cont>.bottom>.brightness>.range-container>.after")[0];
@@ -3584,7 +3584,7 @@ function dragBrightness(e) {
     page.ontouchcancel = up;
 }
 
-// 控制面板 电量监测
+// Control panel battery monitoring
 try {
     navigator.getBattery().then((battery) => {
         $('.a.dock.control>svg>path')[0].outerHTML = `<path
@@ -3603,7 +3603,7 @@ try {
     console.log('Internal error: Unable to get battery');
 }
 
-// 任务管理器 记录硬件运行时间
+// Task manager hardware uptime tracking
 if (localStorage.getItem('cpuRunningTime')) {
     apps.taskmgr.cpuRunningTime = localStorage.getItem('cpuRunningTime');
 }
@@ -3614,7 +3614,7 @@ window.setInterval(() => {
 
 var wifiStatus = true;
 
-// 选择框
+// Selection box
 let chstX, chstY;
 function ch(e) {
     $('#desktop>.choose').css('left', Math.min(chstX, e.clientX));
@@ -3638,7 +3638,7 @@ window.addEventListener('mouseup', e => {
 })
 let isDrak = false;
 
-// 主题
+// Theme
 function toggletheme() {
     $('.dock.theme').toggleClass('dk');
     $(':root').toggleClass('dark');
@@ -3654,13 +3654,13 @@ function toggletheme() {
 }
 
 const isDarkTheme = window.matchMedia("(prefers-color-scheme: dark)");
-if (isDarkTheme.matches) { //是深色
+if (isDarkTheme.matches) { //is dark
     $('.dock.theme').toggleClass('dk');
     $(':root').toggleClass('dark');
     $('.window.whiteboard>.titbar>p').text('Blackboard');
     localStorage.setItem('theme', 'dark');
     isDrak = true;
-} else { // 不是深色
+} else { // not dark
     $('.window.whiteboard>.titbar>p').text('Whiteboard');
     localStorage.setItem('theme', 'light');
 }
@@ -3672,7 +3672,7 @@ function saveDesktop() {
     localStorage.setItem('root_class', $(':root').attr('class'));
 }
 
-// 拖拽窗口
+// Drag window
 const page = document.getElementsByTagName('html')[0];
 const titbars = document.querySelectorAll('.window>.titbar');
 const wins = document.querySelectorAll('.window');
@@ -3741,7 +3741,7 @@ function win_move(e) {
     else if ($(this).hasClass('max')) {
         deltaLeft = deltaLeft / (this.offsetWidth - (45 * 3)) * ((0.7 * document.body.offsetWidth) - (45 * 3));
         maxwin(this.classList[1], false);
-        // 窗口控制按钮宽 45px
+        // Window control button width 45px
         // $(this).css('cssText', `left:${cx - deltaLeft}px;top:${cy - deltaTop}px;`);
         $(this).css('left', `${cx - deltaLeft}px`);
         $(this).css('top', `${cy - deltaTop}px`);
@@ -3888,10 +3888,10 @@ function setIcon() {
     }
     if (Array.isArray(JSON.parse(localStorage.getItem('sys_setting')))) {
         var sys_setting_back = JSON.parse(localStorage.getItem('sys_setting'));
-        if (/^(1|0)+$/.test(sys_setting_back.join(''))/* 只含有0和1 */) {
+        if (/^(1|0)+$/.test(sys_setting_back.join(''))/* contains only 0 and 1 */) {
             sys_setting = sys_setting_back;
             for (var i = 0; i < sys_setting.length; i++) {
-                document.getElementById('sys_setting_' + (i + 1)).setAttribute("class", 'a checkbox' + (sys_setting[i] ? ' checked' : '')); //设置class属性
+                document.getElementById('sys_setting_' + (i + 1)).setAttribute("class", 'a checkbox' + (sys_setting[i] ? ' checked' : '')); // Set class attribute
                 if (i == 5) {
                     use_music = sys_setting[i] ? true : false;
                 }
@@ -3903,7 +3903,7 @@ function setIcon() {
     }
 }
 
-// 启动
+// Startup
 document.getElementsByTagName('body')[0].onload = function nupd() {
     setTimeout(() => {
         $('#loadback').addClass('hide');
@@ -3918,10 +3918,10 @@ document.getElementsByTagName('body')[0].onload = function nupd() {
         $(':root').css('--theme-1', localStorage.getItem('color1'));
         $(':root').css('--theme-2', localStorage.getItem('color2'));
     }
-    setIcon();//加载桌面图标
+    setIcon();// Load desktop icons
 
-    // 所以这个东西为啥要在开机的时候加载？
-    // 不应该在python.init里面吗？
+    // Why does this load at startup?
+    // Should it not be in python.init?
     //     (async function () {
     //         apps.python.pyodide = await loadPyodide();
     //         apps.python.pyodide.runPython(`
@@ -3960,7 +3960,7 @@ document.getElementsByTagName('body')[0].onload = function nupd() {
 let autoUpdate = true;
 function checkUpdate() {
     const sha = localStorage.getItem('sha');
-    fetch('https://api.github.com/repos/tjy-gitnub/win12/commits').then(res => {
+    fetch('https://api.github.com/repos/Mayank10123/win-12/commits').then(res => {
         res.json().then(json => {
             if (sha != json[0].sha && sha) {
                 localStorage.setItem('update', true);
@@ -3980,7 +3980,7 @@ else {
     autoUpdate = (autoUpdate == 'true');
 }
 
-// PWA 应用
+// PWA App
 if (!location.href.match(/((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])(?::(?:[0-9]|[1-9][0-9]{1,3}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5]))/) && !(new URL(location.href)).searchParams.get('develop')) {
     $('#loginback').css('opacity', '1');
     $('#loginback').css('display', 'flex');
@@ -3990,15 +3990,15 @@ if (!location.href.match(/((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d|[1-9]\d|
         reg.update();
 
         reg.addEventListener('updatefound', () => {
-            // 正在安装的新的 SW
+            // Installing new SW
             const newWorker = reg.installing;
-            console.log('dsk-发现更新');
+            console.log('dsk-update found');
             // newWorker.state;
-            // // "installing" - 安装事件被触发，但还没完成
-            // // "installed"  - 安装完成
-            // // "activating" - 激活事件被触发，但还没完成
-            // // "activated"  - 激活成功
-            // // "redundant"  - 废弃，可能是因为安装失败，或者是被一个新版本覆盖
+            // // "installing" - install event fired but not complete
+            // // "installed"  - installation complete
+            // // "activating" - activation event fired but not complete
+            // // "activated"  - activation successful
+            // // "redundant"  - discarded, install failed or overridden by newer version
         });
     });
     // navigator.serviceWorker.controller.postMessage({
@@ -4024,7 +4024,7 @@ if (!location.href.match(/((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d|[1-9]\d|
 
 } else {
     function setData(k, v) {
-        console.log('setData 被禁用');
+        console.log('setData disabled');
     }
 }
 function sendToSw(msg) {
@@ -4032,9 +4032,9 @@ function sendToSw(msg) {
 }
 
 /**
- * 将秒数换算为可读的时间格式
- * @param {number} second 秒数
- * @returns 将秒数格式化为  1 天 8 小时 43 分钟 26 秒类似的格式
+ * Convert seconds to readable time format
+ * @param {number} second seconds
+ * @returns formatted as 1 day 8 hours 43 minutes 26 seconds
  */
 function calcTimeString(second) {
     let timeStr = '';
@@ -4043,16 +4043,16 @@ function calcTimeString(second) {
     const minutes = Math.floor(second % 3600 / 60);
     const seconds = second % 60;
     if (days > 0) {
-        timeStr += " " + days + " 天";
+        timeStr += " " + days +  day";
     }
     if (hours > 0) {
-        timeStr += " " + hours + " 小时";
+        timeStr += " " + hours +  hour";
     }
     if (minutes > 0) {
-        timeStr += " " + minutes + " 分钟";
+        timeStr += " " + minutes +  min";
     }
     if (seconds > 0) {
-        timeStr += " " + seconds + " 秒";
+        timeStr += " " + seconds +  sec";
     }
-    return timeStr === "" ? " 0 秒" : timeStr;
+    return timeStr === "" ?  0 sec" : timeStr;
 }

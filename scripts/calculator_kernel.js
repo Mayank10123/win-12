@@ -13,8 +13,8 @@ class Calculator {
     }
 
     number_key(key) {
-        // key:按下的数字键，int
-        // id:显示区的id
+        // key: pressed number key, int
+        // id: display area id
         if (this.elt.value == "0" || this.preview) {
             this.elt.value = "";
             this.preview = false;
@@ -24,7 +24,7 @@ class Calculator {
     }
 
     func_key(key) {
-        // key:按下的功能键，int,加1，减2，乘3，除4
+        // key: pressed function key, int: add=1, sub=2, mul=3, div=4
         if (!this.isCheck()) {
             if (this.num1 != null) {
                 this.num2 = Big(this.elt.value);
